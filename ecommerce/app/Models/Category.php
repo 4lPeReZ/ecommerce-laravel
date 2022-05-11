@@ -10,4 +10,19 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'slug', 'image', 'icon'];
+
+    //Relacion 1 : N
+    public function subcategories(){
+        return $this->hasMany(Subcategory::class);
+    }
+
+    //Relacion N : M
+    public function brands(){
+        return $this->belongsToMany(Brand::class);
+    }
+
+    //Relacion 1 : N through
+    public function products(){
+        return $this->hasManyThrough(Product::class, Subcategory::class);
+    }
 }
