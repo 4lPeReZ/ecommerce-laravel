@@ -595,6 +595,39 @@ select {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+
+  .container {
+    max-width: 1536px;
+  }
+}
 .prose {
   color: var(--tw-prose-body);
   max-width: 65ch;
@@ -969,6 +1002,10 @@ select {
   margin-left: auto;
   margin-right: auto;
 }
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -1146,6 +1183,9 @@ select {
 .max-w-xl {
   max-width: 36rem;
 }
+.max-w-full {
+  max-width: 100%;
+}
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -1211,6 +1251,9 @@ select {
 }
 .flex-wrap {
   flex-wrap: wrap;
+}
+.content-center {
+  align-content: center;
 }
 .items-center {
   align-items: center;
@@ -1382,6 +1425,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
+.bg-background {
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 242 242 / var(--tw-bg-opacity));
+}
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -1489,6 +1536,12 @@ select {
 }
 .pb-1 {
   padding-bottom: 0.25rem;
+}
+.pl-16 {
+  padding-left: 4rem;
+}
+.pr-16 {
+  padding-right: 4rem;
 }
 .pt-8 {
   padding-top: 2rem;
@@ -1619,6 +1672,10 @@ select {
   --tw-text-opacity: 1;
   color: rgb(34 197 94 / var(--tw-text-opacity));
 }
+.text-principal {
+  --tw-text-opacity: 1;
+  color: rgb(88 88 89 / var(--tw-text-opacity));
+}
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
@@ -1727,7 +1784,7 @@ select {
 .container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 80rem;
+  max-width: 100%;
 }
 @media (min-width: 640px) {
 
@@ -2166,6 +2223,10 @@ select {
 
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
   }
 
   .md\:gap-6 {
