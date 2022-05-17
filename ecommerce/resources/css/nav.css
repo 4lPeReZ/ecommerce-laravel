@@ -1,0 +1,11 @@
+#navigation-menu {
+    height: calc(100vh - 5rem);
+}
+
+li a:hover {
+    text-decoration-line: underline;
+}
+
+#navigation-menu .container {
+    width: 70%;
+}

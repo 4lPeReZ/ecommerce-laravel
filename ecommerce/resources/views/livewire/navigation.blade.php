@@ -1,37 +1,31 @@
-<header class="bg-fondo sticky top-0" x-data="{open:false}">
-    <div class="container flex flex-wrap justify-between items-center content-center">
+<header class="bg-fondo sticky top-0" x-data="dropdown()">
+    <div class="container flex flex-wrap justify-between items-center content-cente md:justify-start">
         <ul class="container flex flex-wrap justify-between items-center content-center mx mt-1 mb-1 md:flex-row "
-            style="width: 85%">
-            <li class="flex items-center">
-                <a  x-on:click="open = !open"
-                    class="flex flex-col items-center justify-center bg-white bg-opacity-25 text-white cursor-pointer h-full">
-                    <svg class="h-6 w-6 cursor-pointer"  style="stroke: gray" fill="none" viewBox="0 0 24 24">
-                        <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </a>
-            </li>
+            style="width: 90%">
             <li class="flex items-center>
                 <a href=" #" class="flex items-center">
-                <img src={{ asset('storage\Logo_2.png') }} alt="Logo" class="h-16 pr-16 pl-16" alt="Logo">
+                <img src={{ asset('storage\Logo_2.png') }} alt="Logo"
+                    class="h-16 pr-16 pl-16 md:pr-10 md:pl-10 s:pr-5 s:pl-5 " alt="Logo">
                 </a>
             </li>
 
             @foreach ($categories as $category)
-            <li class="flex items-center text-principal">
-                <a href="" class="py-2 px-4 text-sm flex items-center">
-                    {{ $category->name }}
-                </a>
-            </li>
+                <li class="flex items-center text-principal">
+                    <div class="flex-1 hidden xl:block">
+                        <a href="" class="py-2 px-4 text-sm flex items-center ">
+                            {{ $category->name }}
+                        </a>
+                    </div>
+                </li>
             @endforeach
 
             <li class="flex items-center pr-16 pl-16">
-                <div class="flex-1 hidden md:block">
+                <div class="flex-1 hidden xl:block">
                     @livewire('search')
                 </div>
             </li>
-            <li class="flex items-center">
-                <div class="flex-1 hidden md:block">
+            <li class="flex items-center ">
+                <div class="flex-1 hidden xl:block">
                     <div class="ml-3 relative">
                         @auth
                             <x-jet-dropdown align="right" width="48">
@@ -91,47 +85,38 @@
                     </div>
                 </div>
             </li>
-            <li class="flex items-center pr-16">
+            <li class="flex items-center pr-16 md:pr-10 s:pr-2">
                 @livewire('dropdown-cart')
+            </li>
+            <li class="flex items-center order-last md:px-4 s:pl-2 s:pr-5 xl:hidden">
+                <a x-on:click="show()"
+                    class="flex flex-col items-center justify-center order-last bg-white bg-opacity-25 text-white cursor-pointer h-full">
+                    <svg class="h-6 w-6 cursor-pointer" style="stroke: gray" fill="none" viewBox="0 0 24 24">
+                        <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </a>
             </li>
         </ul>
     </div>
 
-    <nav id="navigation-menu" :class="{'block':open, 'hidden':!open}" class="bg-backgroundfooter bg-opacity-25 w-full absolute hidden">
-        <div class="container h-full">
-            <div 
-            x-on:click.away="open = false"
-            class="grid grid-cols-4 h-full relative">
-                <ul class="bg-white">
-                    @foreach ($categories as $category)
-                        <li class="text-principal hover:bg-backgroundfooter hover:text-fondo">
-                            <a href="" class="py-2 px-4 text-sm flex items-center">
-                                {{ $category->name }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-                <div class="col-span-3 bg-gray-100"></div>
+    <nav id="navigation-menu" :class="{ 'block': open, 'hidden': !open }"
+        class="bg-backgroundfooter bg-opacity-25 w-full absolute hidden">
+
+        <div class="bg-white h-80 w-full overflow-y-auto">
+            <div class="px-3 py-3 mb-2 w-full bg-backgroundfooter">
+                @livewire('search')
             </div>
+            <ul>
+                @foreach ($categories as $category)
+                    <li class="text-principal hover:bg-backgroundfooter hover:text-fondo">
+                        <a href="" class="py-2 px-4 text-sm flex items-center">
+                            {{ $category->name }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
         </div>
     </nav>
-
     <div class="bg-separador h-px" />
-    <style>
-        #navigation-menu {
-            height: calc(100vh - 5rem);
-        }
-
-        li a:hover{
-        text-decoration-line: underline
-        }
-
-        #navigation-menu .container{
-            width: 70%
-        }
-    
-    </style>
-    
-    <script></script>
 </header>
-

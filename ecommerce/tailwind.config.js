@@ -24,6 +24,11 @@ module.exports = {
                 'background': 'rgb(242,242,242,0)',
                 'fondo': '#f2f2f2',
                 'backgroundfooter': '#3F3F40',
+            },
+
+            screens: {
+                's': '370px',
+                ...defaultTheme.screens,
               },
         },
     },
