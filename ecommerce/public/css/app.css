@@ -974,6 +974,10 @@ select {
 .relative {
   position: relative;
 }
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
 .inset-0 {
   top: 0px;
   right: 0px;
@@ -1071,6 +1075,9 @@ select {
 .mb-4 {
   margin-bottom: 1rem;
 }
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
 .-mt-px {
   margin-top: -1px;
 }
@@ -1121,6 +1128,9 @@ select {
 }
 .h-20 {
   height: 5rem;
+}
+.h-px {
+  height: 1px;
 }
 .h-2 {
   height: 0.5rem;
@@ -1437,6 +1447,14 @@ select {
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+.bg-fondo {
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 242 242 / var(--tw-bg-opacity));
+}
+.bg-separador {
+  --tw-bg-opacity: 1;
+  background-color: rgb(217 217 217 / var(--tw-bg-opacity));
 }
 .bg-background {
   background-color: rgb(242,242,242,0);
