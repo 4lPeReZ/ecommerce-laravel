@@ -21,7 +21,7 @@ module.exports = {
                 'titulo2': '#130f1a',
                 'separador': '#d9d9d9',
                 'footerprincipal': '#a1a4a5',
-                'background': '#f2f2f2',
+                'background': 'rgb(242,242,242,0)',
                 'backgroundfooter': '#3F3F40',
               },
         },
