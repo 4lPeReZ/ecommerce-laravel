@@ -7,16 +7,22 @@
         </x-slot>
         <x-slot name="content">
             <div class="py-3 px-2">
-                <p class="text-left text-principal">
+                <a href="#" class="text-left text-principal">
                     Grupos Masculinos
-                </p>
-                <p class="text-left text-principal">
+                </a>
+                <a href="#" class="text-left text-principal">
                     Grupos Femeninos
-                </p>
-                <p class="text-left text-principal">
+                </a>
+                <a href="#" class="text-left text-principal">
                     Solistas
-                </p>
+                </a>
             </div>
         </x-slot>
     </x-jet-dropdown>
 </div>
+
+<style>
+    span p:hover, a:hover{
+        text-decoration-line: underline
+    }
+</style>
