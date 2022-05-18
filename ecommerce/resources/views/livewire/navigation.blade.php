@@ -103,7 +103,7 @@
     <nav id="navigation-menu" :class="{ 'block': open, 'hidden': !open }"
         class="bg-backgroundfooter bg-opacity-25 w-full absolute hidden">
 
-        <div class="bg-white h-80 w-full overflow-y-auto">
+        <div class="bg-white w-full overflow-y-auto " style="height: 15.5rem">
             <div class="px-3 py-3 mb-2 w-full bg-backgroundfooter">
                 @livewire('search')
             </div>
@@ -116,6 +116,36 @@
                     </li>
                 @endforeach
             </ul>
+            <div class="bg-separador h-px" ></div>
+            @auth
+                <div class="text-principal hover:bg-backgroundfooter hover:text-fondo">
+                    <a href="{{ route('profile.show') }}" class="py-2 px-4 text-sm flex items-center">
+                        Perfil
+                    </a>
+                </div>
+                <div class="text-principal hover:bg-backgroundfooter hover:text-fondo">
+                    <a href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit()"
+                        class="py-2 px-4 text-sm flex items-center">
+                        Cerrar sesión
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                            @csrf
+                        </form>
+                    </a>
+                </div>
+
+            @else
+            <div class="text-principal hover:bg-backgroundfooter hover:text-fondo">
+                <a href="{{ route('login') }}" class="py-2 px-4 text-sm flex items-center">
+                    Iniciar sesión
+                </a>
+            </div>
+            <div class="text-principal hover:bg-backgroundfooter hover:text-fondo">
+                <a href="{{ route('register') }}" class="py-2 px-4 text-sm flex items-center">
+                    Registrate
+                </a>
+            </div>
+            @endauth
         </div>
     </nav>
     <div class="bg-separador h-px" />
