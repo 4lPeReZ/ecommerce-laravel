@@ -1,4 +1,4 @@
-<header class="bg-fondo sticky top-0" x-data="dropdown()">
+<header class="bg-fondo sticky z-50 top-0" x-data="dropdown()">
     <div class="container flex flex-wrap justify-between items-center content-cente md:justify-start">
         <ul class="container flex flex-wrap justify-between items-center content-center mx mt-1 mb-1 md:flex-row "
             style="width: 90%">

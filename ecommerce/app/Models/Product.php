@@ -25,7 +25,7 @@ class Product extends Model
     }
 
     //Relacion 1 : N poly
-    public function image(){
+    public function images(){
         return $this->morphMany(Image::class, "Imageable");
     }
 }
