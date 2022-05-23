@@ -61,7 +61,7 @@
                                 </figure>
                                 <div class="py-4 px-6">
                                     <h1 class="text-lg font-semibold text-titulo">
-                                        <a href="">
+                                        <a href="{{route('products.show', $product)}}">
                                             {{ Str::limit($product->name, 20) }}
                                         </a>
                                     </h1>
@@ -136,9 +136,9 @@
                                     </div>
 
                                     <div class="mt-auto mb-6">
-                                        <x-jet-button class="bg-backgroundfooter text-fondo">
+                                        <x-button-enlace href="{{route('products.show', $product)}}" class="bg-backgroundfooter text-fondo">
                                             Mas información
-                                        </x-jet-button>
+                                        </x-button-enlace>
                                     </div>
                                 </div>
                             </article>
