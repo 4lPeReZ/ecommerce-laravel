@@ -12,7 +12,7 @@
             @foreach ($categories as $category)
                 <li class="flex items-center text-principal">
                     <div class="flex-1 hidden xl:block">
-                        <a href="" class="py-2 px-4 text-sm flex items-center ">
+                        <a href="{{route('categories.show', $category)}}" class="py-2 px-4 text-sm flex items-center ">
                             {{ $category->name }}
                         </a>
                     </div>
@@ -110,7 +110,7 @@
             <ul>
                 @foreach ($categories as $category)
                     <li class="text-principal hover:bg-backgroundfooter hover:text-fondo">
-                        <a href="" class="py-2 px-4 text-sm flex items-center">
+                        <a href="{{route('categories.show', $category)}}" class="py-2 px-4 text-sm flex items-center">
                             {{ $category->name }}
                         </a>
                     </li>

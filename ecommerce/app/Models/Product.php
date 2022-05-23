@@ -15,7 +15,7 @@ class Product extends Model
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
     //Relacion 1 : N inversa
-    public function brands(){
+    public function brand(){
         return $this->belongsTo(Brand::class);
     }
 
