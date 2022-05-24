@@ -27,7 +27,7 @@
         </div>
 
         <div class="flex-1">
-            <x-button class="w-full" >
+            <x-button class="w-full" x-bind:disabled="$wire.qty > $wire.quantity" wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem" >
                 Agregar al carrito de compras
             </x-button>
         </div>
