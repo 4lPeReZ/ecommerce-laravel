@@ -76,9 +76,7 @@
             @else
                 <ul>
                     @foreach ($products as $product)
-                        <x-product-list :product="$product">
-
-                        </x-product-list>
+                        <x-product-list :product="$product" />
                     @endforeach
                 </ul>
             @endif

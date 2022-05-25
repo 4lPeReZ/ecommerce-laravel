@@ -47,7 +47,7 @@
                     <p class="text-lg text-titulo mt-2 mb-3"> <span class="font-bold"> Total: {{Cart::subtotal()}} € </span> </p>
 
 
-                    <x-button-enlace-2 class="w-full cursor-pointer">
+                    <x-button-enlace-2 href="{{ route('shopping-cart') }}" class="w-full cursor-pointer">
                         Ir al carrito de compras
                     </x-button-enlace-2>
 
