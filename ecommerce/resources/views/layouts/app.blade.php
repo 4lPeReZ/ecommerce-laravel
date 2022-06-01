@@ -49,6 +49,8 @@
             <main>
                 {{ $slot }}
             </main>
+
+            <!-- Aqui va un componente de livewire que será el footer -->
         </div>
 
         @stack('modals')
