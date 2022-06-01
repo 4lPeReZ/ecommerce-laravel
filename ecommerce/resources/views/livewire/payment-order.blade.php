@@ -1,5 +1,5 @@
-<x-app-layout>
-
+<div>
+    
     <div class="grid grid-cols-5 gap-6 container py-8">
 
         <div class="col-span-3">
@@ -99,6 +99,8 @@
 
     </div>
 
+    @push('script')
+
     <script src="https://www.paypal.com/sdk/js?client-id={{config('services.paypal.client_id')}}"></script>
 
     <script>
@@ -129,13 +131,14 @@
           onApprove: (data, actions) => {
   
             return actions.order.capture().then(function(orderData) {
-                
+  
                 Livewire.emit('payOrder');
               /* console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
   
               const transaction = orderData.purchase_units[0].payments.captures[0];
   
               alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`); */
+  
   
             });
   
@@ -145,4 +148,6 @@
   
       </script>
 
-</x-app-layout>
+    @endpush
+
+</div>
