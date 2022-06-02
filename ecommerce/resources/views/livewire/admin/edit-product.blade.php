@@ -23,10 +23,31 @@
                 id="my-awesome-dropzone"></form>
         </div>
 
-    
+        @if ($product->images->count())
 
-        {{-- <div class="bg-white shadow-xl rounded-lg p-6">
-        </div> --}}
+            <section class="bg-white shadow-xl rounded-lg p-6 mb-4">
+                <h1 class="text-2xl text-center font-semibold mb-2">Imagenes del producto</h1>
+
+                <ul class="flex flex-wrap">
+                    @foreach ($product->images as $image)
+
+                        <li class="relative" wire:key="image-{{ $image->id }}">
+                            <img class="w-32 h-20 object-cover" src="{{ Storage::url($image->url) }}" alt="">
+                            <x-jet-danger-button class="absolute right-2 top-2"
+                                wire:click="deleteImage({{ $image->id }})" wire:loading.attr="disabled"
+                                wire:target="deleteImage({{ $image->id }})">
+                                x
+                            </x-jet-danger-button>
+                        </li>
+
+                    @endforeach
+
+                </ul>
+            </section>
+
+        @endif
+
+        @livewire('admin.status-product', ['product' => $product], key('status-product-' . $product->id))
 
         <div class="bg-white shadow-xl rounded-lg p-6">
             <div class="grid grid-cols-2 gap-6 mb-4">
@@ -169,20 +190,20 @@
             };
             Livewire.on('deleteProduct', () => {
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    title: '¿Estas seguro?',
+                    text: "¡No podras revertir el proceso!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: '¡Si, deseo borrar el producto!'
                 }).then((result) => {
                     if (result.isConfirmed) {
                         Livewire.emitTo('admin.edit-product', 'delete');
                         Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
+                            '¡Borrado!',
+                            '¡Tu producto ha sido eliminado!',
+                            'Completado'
                         )
                     }
                 })

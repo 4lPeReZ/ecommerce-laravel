@@ -2,9 +2,9 @@
     <div class="container flex flex-wrap justify-between items-center content-cente md:justify-start">
         <ul class="container flex flex-wrap justify-between items-center content-center mx mt-1 mb-1 md:flex-row "
             style="width: 90%">
-            <li class="flex items-center>
-                <a href=" #" class="flex items-center">
-                <img src={{ asset('storage\Logo_2.png') }} alt="Logo"
+            <li class="flex items-center">
+                <a href="/" class="flex items-center">
+                    <img src={{ asset('storage\Logo_2.png') }} alt="Logo"
                     class="h-16 pr-16 pl-16 md:pr-10 md:pl-10 s:pr-5 s:pl-5 " alt="Logo">
                 </a>
             </li>
