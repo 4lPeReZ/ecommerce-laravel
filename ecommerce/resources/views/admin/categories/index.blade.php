@@ -9,20 +9,20 @@
             Livewire.on('deleteCategory', categorySlug => {
             
                 Swal.fire({
-                    title: '¿Estas seguro?',
-                    text: "¡No podras revertir el proceso!",
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: '¡Si, deseo borrar el producto!'
+                    confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        Livewire.emitTo('admin.edit-product', 'delete');
+                        Livewire.emitTo('admin.create-category', 'delete', categorySlug)
                         Swal.fire(
-                            '¡Borrado!',
-                            '¡Tu producto ha sido eliminado!',
-                            'Completado'
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
                         )
                     }
                 })
