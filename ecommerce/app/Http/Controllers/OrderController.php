@@ -34,8 +34,9 @@ class OrderController extends Controller
         $this->authorize('author', $order);
 
         $items = json_decode($order->content);
+        $shipping = json_decode($order->shipping);
 
-        return view('orders.show', compact('order', 'items'));
+        return view('orders.show', compact('order', 'items', 'shipping'));
     }
 
 }

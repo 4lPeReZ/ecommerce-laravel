@@ -33,3 +33,8 @@ Route::get('categories', [CategoryController::class, 'index'])->name('admin.cate
 Route::get('categories/{category}', ShowCategory::class)->name('admin.categories.show');
 
 Route::get('brands', BrandComponent::class)->name('admin.brands.index');
+
+Route::get('departments', DepartmentComponent::class)->name('admin.departments.index');
+Route::get('departments/{department}', ShowDepartment::class)->name('admin.departments.show');
+
+Route::get('cities/{city}', CityComponent::class)->name('admin.cities.show');

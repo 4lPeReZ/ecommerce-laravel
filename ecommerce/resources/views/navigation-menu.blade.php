@@ -28,7 +28,7 @@
                         Marcas
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="">
+                    <x-jet-nav-link href="{{route('admin.departments.index')}}" :active="request()->routeIs('admin.departments.index')">
                         Departamentos
                     </x-jet-nav-link>
 
@@ -174,7 +174,7 @@
                 Marcas
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="">
+            <x-jet-responsive-nav-link href="{{route('admin.departments.index')}}" :active="request()->routeIs('admin.departments.index')">
                 Departamentos
             </x-jet-responsive-nav-link>
 

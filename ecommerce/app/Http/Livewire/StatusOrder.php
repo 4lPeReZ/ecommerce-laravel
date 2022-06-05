@@ -22,8 +22,8 @@ class StatusOrder extends Component
     {
 
         $items = json_decode($this->order->content);
-        $envio = json_decode($this->order->envio);
+        $shipping = json_decode($this->order->shipping);
 
-        return view('livewire.status-order', compact('items', 'envio'));
+        return view('livewire.status-order', compact('items', 'shipping'));
     }
 }

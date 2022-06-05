@@ -46,7 +46,7 @@ class CreateOrdersTable extends Migration
             $table->string('address')->nullable();
             $table->string('references')->nullable();
 
-            $table->json('envio')->nullable();
+            $table->json('shipping')->nullable();
 
             $table->timestamps();
         });
