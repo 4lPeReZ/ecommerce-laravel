@@ -38,3 +38,5 @@ Route::get('departments', DepartmentComponent::class)->name('admin.departments.i
 Route::get('departments/{department}', ShowDepartment::class)->name('admin.departments.show');
 
 Route::get('cities/{city}', CityComponent::class)->name('admin.cities.show');
+
+Route::get('users', UserComponent::class)->name('admin.users.index');
