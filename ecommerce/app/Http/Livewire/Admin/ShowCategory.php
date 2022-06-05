@@ -17,30 +17,22 @@ class ShowCategory extends Component
     protected $rules = [
         'createForm.name' => 'required',
         'createForm.slug' => 'required|unique:subcategories,slug',
-        'createForm.color' => 'required',
-        'createForm.size' => 'required',
     ];
 
     protected $validationAttributes = [
         'createForm.name' => 'nombre',
         'createForm.slug' => 'slug',
-        'createForm.color' => 'color',
-        'createForm.size' => 'talla',
     ];
 
     public $createForm = [
         'name' => null,
         'slug' => null,
-        'color' => false,
-        'size' => false
     ];
 
     public $editForm = [
         'open' => false,
         'name' => null,
         'slug' => null,
-        'color' => false,
-        'size' => false
     ];
 
     public function mount(Category $category){
@@ -80,8 +72,6 @@ class ShowCategory extends Component
 
         $this->editForm['name'] = $subcategory->name;
         $this->editForm['slug'] = $subcategory->slug;
-        $this->editForm['color'] = $subcategory->color;
-        $this->editForm['size'] = $subcategory->size;
 
     }
 
@@ -89,8 +79,6 @@ class ShowCategory extends Component
         $this->validate([
             'editForm.name' => 'required',
             'editForm.slug' => 'required|unique:subcategories,slug,' . $this->subcategory->id,
-            'editForm.color' => 'required',
-            'editForm.size' => 'required',
         ]);
 
         $this->subcategory->update($this->editForm);

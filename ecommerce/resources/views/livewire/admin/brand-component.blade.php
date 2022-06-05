@@ -1,13 +1,12 @@
 <div class="container py-12">
-    
-    {{-- Formulario crear categoría --}}
+    {{-- Formaliio crear --}}
     <x-jet-form-section submit="save" class="mb-6">
         <x-slot name="title">
-            Crear nueva subcategoría
+            Agregar nueva marca
         </x-slot>
 
         <x-slot name="description">
-            Complete la información necesaria para poder crear una nueva subcategoría
+            En esta sección podrá agregar una nueva marca
         </x-slot>
 
         <x-slot name="form">
@@ -16,43 +15,26 @@
                     Nombre
                 </x-jet-label>
 
-                <x-jet-input wire:model="createForm.name" type="text" class="w-full mt-1" />
-
+                <x-jet-input type="text" wire:model="createForm.name" class="w-full" />
                 <x-jet-input-error for="createForm.name" />
             </div>
-
-            <div class="col-span-6 sm:col-span-4">
-                <x-jet-label>
-                    Slug
-                </x-jet-label>
-
-                <x-jet-input disabled wire:model="createForm.slug" type="text" class="w-full mt-1 bg-gray-100" />
-                <x-jet-input-error for="createForm.slug" />
-            </div>
-
         </x-slot>
 
-
         <x-slot name="actions">
-
-            <x-jet-action-message class="mr-3" on="saved">
-                Categoría subcategoría
-            </x-jet-action-message>
-
             <x-jet-button>
                 Agregar
             </x-jet-button>
         </x-slot>
     </x-jet-form-section>
 
-    {{-- Lista de subcategorías --}}
+    {{-- Lista de marcas --}}
     <x-jet-action-section>
         <x-slot name="title">
-            Lista de subcategorías
+            Lista de marcas
         </x-slot>
 
         <x-slot name="description">
-            Aquí encontrará todas las subcategorías agregadas
+            Aquí encontrará todas las marcas agregadas
         </x-slot>
 
         <x-slot name="content">
@@ -61,23 +43,23 @@
                 <thead class="border-b border-gray-300">
                     <tr class="text-left">
                         <th class="py-2 w-full">Nombre</th>
-                        <th class="py-2 text-center">Acción</th>
+                        <th class="py-2">Acción</th>
                     </tr>
                 </thead>
 
                 <tbody class="divide-y divide-gray-300">
-                    @foreach ($subcategories as $subcategory)
+                    @foreach ($brands as $brand)
                         <tr>
                             <td class="py-2">
 
-                                <a href="{{route('admin.categories.show', $subcategory)}}" class="uppercase">
-                                    {{$subcategory->name}}
+                                <a class="uppercase">
+                                    {{$brand->name}}
                                 </a>
                             </td>
                             <td class="py-2">
                                 <div class="flex divide-x divide-gray-300 font-semibold">
-                                    <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit('{{$subcategory->id}}')">Editar</a>
-                                    <a class="pl-2 hover:text-red-600 cursor-pointer" wire:click="$emit('deleteSubcategory', '{{$subcategory->id}}')">Eliminar</a>
+                                    <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit('{{$brand->id}}')">Editar</a>
+                                    <a class="pl-2 hover:text-red-600 cursor-pointer" wire:click="$emit('deleteBrand', '{{$brand->id}}')">Eliminar</a>
                                 </div>
                             </td>
                         </tr>
@@ -90,35 +72,16 @@
 
     {{-- Modal editar --}}
     <x-jet-dialog-modal wire:model="editForm.open">
-
         <x-slot name="title">
-            Editar subcategoría
+            Editar marca
         </x-slot>
 
         <x-slot name="content">
-
-            <div class="space-y-3">
-                
-                <div>
-                    <x-jet-label>
-                        Nombre
-                    </x-jet-label>
-
-                    <x-jet-input wire:model="editForm.name" type="text" class="w-full mt-1" />
-
-                    <x-jet-input-error for="editForm.name" />
-                </div>
-
-                <div>
-                    <x-jet-label>
-                        Slug
-                    </x-jet-label>
-
-                    <x-jet-input disabled wire:model="editForm.slug" type="text" class="w-full mt-1 bg-gray-100" />
-                    <x-jet-input-error for="editForm.slug" />
-                </div>
-
-            </div>
+            <x-jet-label>
+                Nombre
+            </x-jet-label>
+            <x-jet-input wire:model="editForm.name" type="text" class="w-full" />
+            <x-jet-input-error for="editForm.name" />
         </x-slot>
 
         <x-slot name="footer">
@@ -126,12 +89,11 @@
                 Actualizar
             </x-jet-danger-button>
         </x-slot>
-
     </x-jet-dialog-modal>
 
     @push('script')
         <script>
-            Livewire.on('deleteSubcategory', subcategoryId => {
+            Livewire.on('deleteBrand', brandId => {
             
                 Swal.fire({
                     title: 'Are you sure?',
@@ -143,7 +105,7 @@
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        Livewire.emitTo('admin.show-category', 'delete', subcategoryId)
+                        Livewire.emitTo('admin.brand-component', 'delete', brandId)
                         Swal.fire(
                             'Deleted!',
                             'Your file has been deleted.',
