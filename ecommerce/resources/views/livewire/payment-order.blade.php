@@ -1,8 +1,8 @@
 <div>
     
-    <div class="grid grid-cols-5 gap-6 container py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 gap-6 container py-8">
 
-        <div class="col-span-3">
+        <div class="xl:col-span-3">
             <div class="bg-fondo rounded-lg shadow-lg px-6 py-4 mb-6">
                 <p class="text-titulo uppercase"><span class="font-semibold">Numero de orden:</span> Orden-{{$order->id}}</p>
             </div>
@@ -76,7 +76,7 @@
             
         </div>
 
-        <div class="col-span-2">
+        <div class="xl:col-span-2">
             <div class="bg-fondo rounded-lg shadow-lg px-6 pt-6">
                 <div class="flex justify-between items-center mb-4">
                     <img class="h-8" src="{{asset('img/visa-mastercard.png')}}" alt="">

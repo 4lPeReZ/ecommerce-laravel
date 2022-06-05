@@ -1177,9 +1177,6 @@ select {
 .mr-1 {
   margin-right: 0.25rem;
 }
-.mt-auto {
-  margin-top: auto;
-}
 .block {
   display: block;
 }
@@ -1308,9 +1305,6 @@ select {
 }
 .w-32 {
   width: 8rem;
-}
-.w-56 {
-  width: 14rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -2631,12 +2625,24 @@ li a:hover {
     margin-top: 0px;
   }
 
+  .md\:mt-auto {
+    margin-top: auto;
+  }
+
   .md\:block {
     display: block;
   }
 
+  .md\:flex {
+    display: flex;
+  }
+
   .md\:grid {
     display: grid;
+  }
+
+  .md\:w-56 {
+    width: 14rem;
   }
 
   .md\:grid-cols-3 {
@@ -2645,6 +2651,10 @@ li a:hover {
 
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .md\:flex-row {
@@ -2701,6 +2711,10 @@ li a:hover {
   .lg\:-mx-8 {
     margin-left: -2rem;
     margin-right: -2rem;
+  }
+
+  .lg\:flex {
+    display: flex;
   }
 
   .lg\:grid-cols-2 {

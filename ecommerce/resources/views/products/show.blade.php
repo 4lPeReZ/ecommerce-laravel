@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="container py-8">
-        <div class="grid grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <div>
                 <div class="flexslider">
                     <ul class="slides">
@@ -29,6 +29,12 @@
                 <p class="text-2xl font-semibold text-titulo2 my-4">
                     {{$product->price}} €
                 </p>
+                <div class="text-gray-700 mb-4">
+                    <h2 class="font-bold text-lg">
+                        Descripción
+                    </h2>
+                    {!!$product->description!!}
+                </div>
                 <div class="bg-fondo rounded-lg shadow-lg mb-6">
                     <div class="p-4 flex items-center">
                         <span class="flex items-center justify-center h-10 w-10 rounded-full bg-footerprincipal">

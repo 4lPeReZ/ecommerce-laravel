@@ -1,25 +1,39 @@
 <div class="container py-8">
-    <section class="bg-fondo rounded-lg shadow-lg p-6 text-titulo">
-        <h1 class="text-lg font-semibold mb-6">CARRITO DE COMPRAS</h1>
+    <x-table-responsive class="bg-fondo rounded-lg shadow-lg p-6 text-titulo">
+        <div class="px-6 py-4 bg-white">
+            <h1 class="text-lg font-semibold">CARRITO DE COMPRAS</h1>
+        </div>
 
         @if (Cart::count())
 
             <table class="table-auto w-full">
                 <thead>
                     <tr>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-titulo uppercase tracking-wider">Nombre</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-titulo uppercase tracking-wider">Precio</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-titulo uppercase tracking-wider">Cantidad</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-titulo uppercase tracking-wider">Total</th>
-                    </tr>
+                    <th scope="col"
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Nombre
+                    </th>
+                    <th scope="col"
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Precio
+                    </th>
+                    <th scope="col"
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Cantidad
+                    </th>
+                    <th scope="col"
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Total
+                    </th>
+                </tr>
                 </thead>
-                <tbody class="bg-fondo divide-y divide-separador">
+                <tbody class="bg-white divide-y divide-gray-200">
                     @foreach (Cart::content() as $item)
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
                                     <div class="flex-shrink-0 h-10 w-10">
-                                        <img class="h-15 w-20 object-cover mr-4" src={{$item->options->image}}"" alt="">
+                                        <img class="h-15 w-20 rounded-full object-cover object-center mr-4" src={{$item->options->image}}"" alt="">
                                     </div>
                                     <div>
                                         <p class="font-bold">{{$item->name}}</p>
@@ -27,7 +41,7 @@
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <span>USD {{ $item->price }}</span>
+                                <span>{{ $item->price }} €</span>
                                 <a class="ml-6 cursor-pointer hover:text-red-600"
                                     wire:click="delete('{{$item->rowId}}')"
                                     wire:loading.class="text-red-600 opacity-25"
@@ -69,7 +83,8 @@
             </div>
         @endif
         
-    </section>
+    </x-table-responsive>
+
 
     @if (Cart::count())
 
