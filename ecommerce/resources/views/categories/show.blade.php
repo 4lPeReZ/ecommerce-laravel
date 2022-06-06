@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="container py-8">
+    <div class="container py-8 font-roboto_reg">
         <figure class="mb-4">
             <img class="w-full h-80 object-cover object-center" src="{{Storage::url($category->image)}}" alt="">
         </figure>

@@ -1,4 +1,4 @@
-<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="max-w-5xl min-h-[75vh] mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
 
     <div class="bg-white rounded-lg shadow-lg px-12 py-8 mb-6 flex items-center">
@@ -43,8 +43,8 @@
 
 
     <div class="bg-white rounded-lg shadow-lg px-6 py-4 mb-6">
-        <p class="text-gray-700 uppercase"><span class="font-semibold">Número de orden:</span>
-            Orden-{{ $order->id }}</p>
+        <p class="text-gray-700 uppercase"><span class="font-semibold">Número de pedido:</span>
+            Pedido-{{ $order->id }}</p>
 
         <form wire:submit.prevent="update">
             <div class="flex space-x-3 mt-2">

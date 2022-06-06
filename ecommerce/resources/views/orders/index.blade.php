@@ -1,8 +1,8 @@
 <x-app-layout>
 
-    <div class="container py-12">
+    <div class="container py-12 min-h-[75vh]">
 
-        <section class="grid lg:grid-cols-5 gap-6 text-white">
+        <section class="grid lg:grid-cols-5 gap-6 text-white ">
             <a href="{{ route('orders.index') . "?status=1" }}" class="bg-red-500 bg-opacity-75 rounded-lg px-12 pt-8 pb-4">
                 <p class="text-center text-2xl">
                     {{$pendiente}}
@@ -87,7 +87,7 @@
                                 </span>
 
                                 <span>
-                                    Orden: {{$order->id}}
+                                    Pedido: {{$order->id}}
                                     <br>
                                     {{$order->created_at->format('d/m/Y')}}
                                 </span>
@@ -146,7 +146,7 @@
         @else
         <div class="bg-white shadow-lg rounded-lg px-12 py-8 mt-12 text-gray-700">
             <span class="font-bold text-lg">
-                No existe registros de ordenes
+                No existe registros de pedidos
             </span>
         </div>
         @endif

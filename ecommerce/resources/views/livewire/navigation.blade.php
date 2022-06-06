@@ -1,11 +1,12 @@
 <header class="bg-fondo sticky top-0" style="z-index: 900" x-data="dropdown()">
-    <div class="container flex flex-wrap justify-between items-center content-cente md:justify-start">
+    <div class="container flex flex-wrap font-roboto_reg justify-between items-center content-cente md:justify-start">
         <ul class="container flex flex-wrap justify-between items-center content-center mx mt-1 mb-1 md:flex-row "
             style="width: 90%">
             <li class="flex items-center">
+                <!-- Logo -->
                 <a href="/" class="flex items-center">
                     <img src={{ asset('storage\Logo_2.png') }} alt="Logo"
-                    class="h-16 pr-16 pl-16 md:pr-10 md:pl-10 s:pr-5 s:pl-5 " alt="Logo">
+                    class="h-[10vh] pr-16 pl-16 md:pr-10 md:pl-10 s:pr-5 s:pl-5 " alt="Logo">
                 </a>
             </li>
 
@@ -24,7 +25,7 @@
                     @livewire('search')
                 </div>
             </li>
-            <li class="flex items-center ">
+            <li class="flex items-center font-roboto_reg">
                 <div class="flex-1 hidden xl:block">
                     <div class="ml-3 relative">
                         @auth
@@ -38,7 +39,7 @@
                                     </button>
                                 </x-slot>
 
-                                <x-slot name="content">
+                                <x-slot name="content" class="font-roboto_reg">
                                     <!-- Account Management -->
                                     <div class="block px-4 py-2 text-xs text-gray-400">
                                         {{ __('Manage Account') }}

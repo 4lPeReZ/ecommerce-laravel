@@ -1,11 +1,11 @@
 <div>
-    <div class="bg-white rounded-lg shadow-lg mb-6">
+    <div class="bg-white rounded-lg shadow-lg mb-6 font-roboto_reg">
         <div class="px-6 py-2 flex justify-between items-center">
-            <h1 class="font-semibold text-gray-700 uppercase">{{$category->name}}</h1>
+            <h1 class="font-semibold text-titulo uppercase">{{$category->name}}</h1>
 
-            <div class="hidden md:block grid grid-cols-2 border border-gray-200 divide-x divide-gray-200 text-gray-500">
-                <i class="fas fa-border-all p-3 cursor-pointer {{ $view == 'grid' ? 'text-orange-500' : ''}}" wire:click="$set('view', 'grid')"></i>
-                <i class="fas fa-th-list p-3 cursor-pointer {{ $view == 'list' ? 'text-orange-500' : ''}}" wire:click="$set('view', 'list')"></i>
+            <div class="hidden md:block grid grid-cols-2 border border-fondo divide-x divide-separador text-principal">
+                <i class="fas fa-border-all text-principal p-3 cursor-pointer {{ $view == 'grid' ? 'text-backgroundfooter' : ''}}" wire:click="$set('view', 'grid')"></i>
+                <i class="fas fa-th-list p-3 text-principal cursor-pointer {{ $view == 'list' ? 'text-backgroundfooter' : ''}}" wire:click="$set('view', 'list')"></i>
             </div>
         </div>
     </div>
@@ -14,11 +14,11 @@
 
         <aside>
 
-            <h2 class="font-semibold text-center mb-2">Subcategorías</h2>
-            <ul class="divide-y divide-gray-200">
+            <h2 class="font-semibold text-titulo text-center mb-2">Subcategorías</h2>
+            <ul class="divide-y divide-separador">
                 @foreach ($category->subcategories as $subcategory)
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer hover:text-orange-500 capitalize {{ $subcategoria == $subcategory->slug ? 'text-orange-500 font-semibold' : '' }}"
+                        <a class="cursor-pointer hover:text-principal capitalize {{ $subcategoria == $subcategory->slug ? 'text-principal font-semibold' : '' }}"
                             wire:click="$set('subcategoria', '{{$subcategory->slug}}')"
                         >{{$subcategory->name}}
                         </a>
@@ -26,11 +26,11 @@
                 @endforeach
             </ul>
 
-            <h2 class="font-semibold text-center mt-4 mb-2">Marcas</h2>
-            <ul class="divide-y divide-gray-200">
+            <h2 class="font-semibold text-titulo text-center mt-4 mb-2">Marcas</h2>
+            <ul class="divide-y divide-separador">
                 @foreach ($category->brands as $brand)
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer hover:text-orange-500 capitalize {{ $marca == $brand->name ? 'text-orange-500 font-semibold' : ''}}"
+                        <a class="cursor-pointer hover:text-principal capitalize {{ $marca == $brand->name ? 'text-principal font-semibold' : ''}}"
                             wire:click="$set('marca', '{{$brand->name}}')"
                         >
                             {{$brand->name}}
@@ -56,13 +56,13 @@
                                 </figure>
 
                                 <div class="py-4 px-6">
-                                        <h1 class="text-lg font-semibold">
+                                        <h1 class="text-lg text-principal font-roboto_reg">
                                             <a href="{{ route('products.show', $product) }}">
                                                 {{Str::limit($product->name, 20)}}
                                             </a>
                                         </h1>
 
-                                        <p class="font-bold text-trueGray-700">{{$product->price}} €</p>
+                                        <p class="font-semibold text-principal">{{$product->price}} €</p>
                                 </div>
                             </article>
                         </li>

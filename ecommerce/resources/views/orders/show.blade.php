@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="max-w-5xl min-h-[75vh] mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <div class="bg-white rounded-lg shadow-lg px-12 py-8 mb-6 flex items-center">
 
@@ -44,7 +44,7 @@
 
 
         <div class="bg-fondo rounded-lg shadow-lg px-6 py-4 mb-6 flex items-center">
-            <p class="text-titulo uppercase"><span class="font-semibold">Numero de orden:</span> Orden-{{$order->id}}</p>
+            <p class="text-titulo uppercase"><span class="font-semibold">Numero de pedido:</span> Pedido-{{$order->id}}</p>
 
             @if ($order->status == 1)
                 <x-button-enlace-2 class="ml-auto" href="{{route('orders.payment', $order)}}">

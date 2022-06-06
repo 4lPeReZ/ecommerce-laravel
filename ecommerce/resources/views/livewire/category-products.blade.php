@@ -1,4 +1,4 @@
-<div wire:init="loadPosts">
+<div class="font-roboto_reg" wire:init="loadPosts">
     @if (count($products))
         <div class="glider-contain">
             <ul class="glider-{{$category->id}}" style="scrollbar-width: none">
@@ -9,13 +9,13 @@
                                 <img class="h-48 w-full object-cover object-center" src="{{ Storage::url($product->images->first()->url) }}" alt="">
                             </figure>
                             <div class="py-4 px-6">
-                                <h1 class="text-lg font-semibold text-titulo">
+                                <h1 class="text-lg text-principal">
                                     <a href="{{route('products.show', $product)}}">
                                         {{ Str::limit($product->name, 20) }}
                                     </a>
                                 </h1>
-                                <p class="font-bold text-titulo2">
-                                    {{ $product->price }}€
+                                <p class="font-semibold text-principal">
+                                    {{ $product->price }} €
                                 </p>
                             </div>
                         </article>
@@ -25,7 +25,6 @@
 
             <button aria-label="Previous" class="glider-prev text-fondo">«</button>
             <button aria-label="Next" class="glider-next text-fondo">»</button>
-            <div role="tablist" class="dots"></div>
         </div>
     @else
         <!-- <div class="mb-4 h-48 flex justify-center items-center bg-white shadow-xl border border-gray-100 rounded-lg">
@@ -38,3 +37,9 @@
         </div>
     @endif
 </div>
+
+<style>
+    .glider-contain{
+        width: 75%
+    }
+</style>

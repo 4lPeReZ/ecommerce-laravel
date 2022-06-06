@@ -1,10 +1,10 @@
 <div>
     
-    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 gap-6 container py-8">
+    <div class="grid min-h-[75vh] grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 gap-6 container py-8">
 
         <div class="xl:col-span-3">
             <div class="bg-fondo rounded-lg shadow-lg px-6 py-4 mb-6">
-                <p class="text-titulo uppercase"><span class="font-semibold">Numero de orden:</span> Orden-{{$order->id}}</p>
+                <p class="text-titulo uppercase"><span class="font-semibold">Numero de pedido:</span> Pedido-{{$order->id}}</p>
             </div>
     
             <div class="bg-fondo rounded-lg shadow-lg p-6 mb-6">

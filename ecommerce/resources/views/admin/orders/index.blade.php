@@ -1,6 +1,6 @@
 <x-admin-layout>
 
-    <div class="container py-12">
+    <div class="container py-12 min-h-[75vh]">
 
         <section class="grid md:grid-cols-4 gap-6 text-white">
            
@@ -77,7 +77,7 @@
                                 </span>
 
                                 <span>
-                                    Orden: {{$order->id}}
+                                    Pedido: {{$order->id}}
                                     <br>
                                     {{$order->created_at->format('d/m/Y')}}
                                 </span>
@@ -136,7 +136,7 @@
         @else
             <div class="bg-white shadow-lg rounded-lg px-12 py-8 mt-12 text-gray-700">
                 <span class="font-bold text-lg">
-                    No existe registros de ordenes
+                    No existe registros de pedidos
                 </span>
             </div>
         @endif

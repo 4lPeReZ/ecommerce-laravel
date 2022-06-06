@@ -13,6 +13,8 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                abril: ['Abril Fatface'],
+                roboto_reg: ['Roboto', 'Regular'],
             },
 
             colors: {

@@ -1,4 +1,4 @@
-<div class="container py-8 grid lg:grid-cols-2 xl:grid-cols-5 gap-6">
+<div class="container font-roboto_reg min-h-[75vh] py-8 grid lg:grid-cols-2 xl:grid-cols-5 gap-6">
 
     <div class="order-2 lg:order-1 lg:col-span-1 xl:col-span-3">
 
