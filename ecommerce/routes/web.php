@@ -5,6 +5,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SearchController;
 use App\Http\Livewire\ShoppingCart;
 use App\Http\Livewire\CreateOrder;
@@ -32,3 +33,5 @@ Route::middleware(['auth'])->group(function(){
     Route::get('orders/{order}/payment', PaymentOrder::class)->name('orders.payment');
 
 });
+
+Route::post('reviews/{product}', [ReviewController::class, 'store'])->name('reviews.store');

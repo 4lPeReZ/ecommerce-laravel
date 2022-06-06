@@ -14,6 +14,11 @@ class Product extends Model
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
+
+    public function reviews(){
+        return $this->hasMany(Review::class);
+    }
+
     //Relacion 1 : N inversa
     public function brand(){
         return $this->belongsTo(Brand::class);
