@@ -7,10 +7,10 @@
                 <p class="text-titulo uppercase"><span class="font-semibold">Numero de pedido:</span> Pedido-{{$order->id}}</p>
             </div>
     
-            <div class="bg-fondo rounded-lg shadow-lg p-6 mb-6">
+            <div class="bg-fondo rounded-lg shadow-lg p-4 mb-4">
                 <div class="grid grid-cols-2 gap-6 text-titulo">
                     <div>
-                        <p class="text-lg font-semibold uppercase">Envio</p>
+                        <p class="text-md xl:text-lg font-semibold uppercase">Envio</p>
     
                         @if ($order->shipping_type == 1)
                             <p class="text-sm">Los productos deben ser recogidos en tienda</p>
@@ -23,7 +23,7 @@
     
                     </div>
                     <div>
-                        <p class="text-lg font-semibold uppercase">Datos de contacto</p>
+                        <p class="text-md xl:text-lg font-semibold uppercase">Contacto</p>
     
                         <p class="text-sm">Persona que recibira el producto: {{$order->contact}}</p>
                         <p class="text-sm">Telefono de contacto: {{$order->phone}}</p>
@@ -44,7 +44,7 @@
                         </tr>
                     </thead>
     
-                    <tbody class="divide-y divide-gray-300">
+                    <tbody class="divide-y divide-separador">
                         @foreach ($items as $item)
                             <tr>
                                 <td>
@@ -58,13 +58,13 @@
                                         </article>
                                     </div>
                                 </td>
-                                <td class="text-center">
+                                <td class="text-center text-sm xl:text-lg">
                                     {{$item->price}} €
                                 </td>
-                                <td class="text-center">
+                                <td class="text-center text-sm xl:text-lg">
                                     {{$item->qty}}
                                 </td>
-                                <td class="text-center">
+                                <td class="text-center text-sm xl:text-lg">
                                     {{$item->price * $item->qty}} €
                                 </td>
                             </tr>

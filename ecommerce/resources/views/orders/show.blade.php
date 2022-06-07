@@ -70,7 +70,7 @@
 
                 </div>
                 <div>
-                    <p class="text-lg font-semibold uppercase">Datos de contacto</p>
+                    <p class="text-lg font-semibold uppercase">Contacto</p>
 
                     <p class="text-sm">Persona que recibira el producto: {{$order->contact}}</p>
                     <p class="text-sm">Telefono de contacto: {{$order->phone}}</p>

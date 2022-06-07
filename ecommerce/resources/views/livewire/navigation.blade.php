@@ -114,7 +114,7 @@
     <nav id="navigation-menu" :class="{ 'block': open, 'hidden': !open }"
         class="bg-backgroundfooter bg-opacity-25 w-full absolute hidden">
 
-        <div class="bg-white w-full overflow-y-auto " style="height: 15.5rem">
+        <div class="bg-white w-full overflow-y-auto h-[16rem]">
             <div class="px-3 py-3 mb-2 w-full bg-backgroundfooter">
                 @livewire('search')
             </div>
@@ -134,6 +134,19 @@
                         Perfil
                     </a>
                 </div>
+                <div class="text-principal hover:bg-backgroundfooter hover:text-fondo">
+                    <a href="{{ route('orders.index') }}" class="py-2 px-4 text-sm flex items-center">
+                        Pedidos
+                    </a>
+                </div>
+
+                @role('admin')
+                    <div class="text-principal hover:bg-backgroundfooter hover:text-fondo">
+                        <a href="{{ route('admin.index') }}" class="py-2 px-4 text-sm flex items-center">
+                            Administrador
+                        </a>
+                    </div>
+                @endrole
                 <div class="text-principal hover:bg-backgroundfooter hover:text-fondo">
                     <a href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit()"
                         class="py-2 px-4 text-sm flex items-center">

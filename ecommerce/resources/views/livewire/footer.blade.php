@@ -25,16 +25,16 @@
 
                 <ul class="list-none mb-0">
                     <li>
-                        <a href="#!" class="text-footerprincipal">Aviso Legal</a>
+                        <a href="{{route('error404')}}" class="text-footerprincipal">Aviso Legal</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-footerprincipal">Cambio o devoluciones</a>
+                        <a href="{{route('error404')}}" class="text-footerprincipal">Cambio o devoluciones</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-footerprincipal">Politica de envios</a>
+                        <a href="{{route('error404')}}" class="text-footerprincipal">Politica de envios</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-footerprincipal">Condiciones de uso</a>
+                        <a href="{{route('error404')}}" class="text-footerprincipal">Condiciones de uso</a>
                     </li>
                 </ul>
             </div>
@@ -42,7 +42,7 @@
             <div class="mb-6">
                 <h5 class="font-semibold mb-2.5">Redes sociales</h5>
                 <div class="flex justify-center mb-6">
-                    <a href="#!" type="button"
+                    <a href="{{route('error404')}}" type="button"
                         class="rounded-full border-2 border-footerprincipal text-footerprincipal leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
                         <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
                             class="w-2 h-full mx-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
@@ -52,7 +52,7 @@
                         </svg>
                     </a>
         
-                    <a href="#!" type="button"
+                    <a href="{{route('error404')}}" type="button"
                         class="rounded-full border-2 border-footerprincipal text-footerprincipal leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
                         <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
                             class="w-3 h-full mx-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -62,7 +62,7 @@
                         </svg>
                     </a>
         
-                    <a href="#!" type="button"
+                    <a href="{{route('error404')}}" type="button"
                         class="rounded-full border-2 border-footerprincipal text-footerprincipal leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
                         <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" class="w-3 h-full mx-auto"
                             role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
@@ -72,7 +72,7 @@
                         </svg>
                     </a>
         
-                    <a href="#!" type="button"
+                    <a href="{{route('error404')}}" type="button"
                         class="rounded-full border-2 border-footerprincipal text-footerprincipal leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
                         <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram"
                             class="w-3 h-full mx-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -82,7 +82,7 @@
                         </svg>
                     </a>
         
-                    <a href="#!" type="button"
+                    <a href="{{route('error404')}}" type="button"
                         class="rounded-full border-2 border-footerprincipal text-footerprincipal leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
                         <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in"
                             class="w-3 h-full mx-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -92,7 +92,7 @@
                         </svg>
                     </a>
         
-                    <a href="#!" type="button"
+                    <a href="{{route('error404')}}" type="button"
                         class="rounded-full border-2 border-footerprincipal text-footerprincipal leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
                         <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github"
                             class="w-3 h-full mx-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">

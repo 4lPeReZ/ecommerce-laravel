@@ -45,11 +45,11 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-[75vh] bg-gray-100">
+        <div class="bg-gray-100">
             @livewire('navigation')
 
             <!-- Page Content -->
-            <main>
+            <main class="min-h-[75vh] mx-2">
                 {{ $slot }}
             </main>
 

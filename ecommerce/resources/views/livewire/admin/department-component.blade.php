@@ -1,13 +1,13 @@
 <div class="container py-12">
-    {{-- Agregar departamento --}}
+    {{-- Agregar Comunidad Autónoma --}}
     <x-jet-form-section submit="save" class="mb-6">
 
         <x-slot name="title">
-            Agregar un nuevo departamento
+            Agregar una nueva comunidad autónoma
         </x-slot>
 
         <x-slot name="description">
-            Complete la información necesaria para poder agregar un nuevo departamento
+            Complete la información necesaria para poder agregar una nueva comunidad autónoma
         </x-slot>
 
         <x-slot name="form">
@@ -34,14 +34,14 @@
         </x-slot>
     </x-jet-form-section>
 
-    {{-- Mostrar Departamentos --}}
+    {{-- Mostrar Comunidad Autónoma --}}
     <x-jet-action-section>
         <x-slot name="title">
-            Lista de Departamentos
+            Lista de comunidades autónomas
         </x-slot>
 
         <x-slot name="description">
-            Aquí encontrará todas los departamentos agregados
+            Aquí encontrará todas las comunidades autónomas agregados
         </x-slot>
 
         <x-slot name="content">
@@ -81,7 +81,7 @@
     <x-jet-dialog-modal wire:model="editForm.open">
 
         <x-slot name="title">
-            Editar departamento
+            Editar comunidad autónoma
         </x-slot>
 
         <x-slot name="content">

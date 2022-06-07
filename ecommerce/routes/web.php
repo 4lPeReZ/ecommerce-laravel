@@ -9,6 +9,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SearchController;
 use App\Http\Livewire\ShoppingCart;
 use App\Http\Livewire\CreateOrder;
+use App\Http\Livewire\Error404;
 use App\Http\Livewire\PaymentOrder;
 
 Route::get('/', WelcomeController::class);
@@ -20,6 +21,8 @@ Route::get('categories/{category}', [CategoryController::class, 'show'])->name('
 Route::get('products/{product}', [ProductController::class, 'show'])->name('products.show');
 
 Route::get('shopping-cart', ShoppingCart::class)->name('shopping-cart');
+
+Route::get('error404', Error404::class)->name('error404');
 
 
 Route::middleware(['auth'])->group(function(){

@@ -96,7 +96,7 @@
             </div>
 
             <div>
-                <p class="text-lg font-semibold uppercase">Datos de contacto</p>
+                <p class="text-lg font-semibold uppercase">Contacto</p>
 
                 <p class="text-sm">Persona que recibirá el producto: {{ $order->contact }}</p>
                 <p class="text-sm">Teléfono de contacto: {{ $order->phone }}</p>

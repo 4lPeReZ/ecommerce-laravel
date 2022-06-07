@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 class="font-abril text-center mt-8 text-6xl">NOVEDADES</h1>
+    <h1 class="font-abril text-center mt-8 text-3xl xl:text-6xl ">NOVEDADES</h1>
     <div class="container py-8 font-roboto_reg content-center">
         @foreach ($categories as $category)
             <section class="mb-6 py-6">

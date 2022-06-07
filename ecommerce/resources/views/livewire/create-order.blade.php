@@ -6,6 +6,7 @@
             <div class="mb-4">
                 <x-jet-label value="Nombre de contacto" />
                 <x-jet-input type="text"
+                            pattern="[A-Za-z0-9]{5,40}"
                             wire:model.defer="contact"
                             placeholder="Ingrese el nombre de la persona que recibirá el producto"
                             class="w-full"/>
@@ -15,6 +16,7 @@
             <div>
                 <x-jet-label value="Teléfono de contacto" />
                 <x-jet-input type="text"
+                            pattern="[0-9]{9}"
                             wire:model.defer="phone"
                             placeholder="Ingrese un número de telefono de contácto"
                             class="w-full"/>
@@ -66,11 +68,11 @@
 
                     {{-- Ciudades --}}
                     <div>
-                        <x-jet-label value="Ciudad" />
+                        <x-jet-label value="Provincia" />
 
                         <select class="form-control w-full" wire:model="city_id">
 
-                            <option value="" disabled selected>Seleccione una ciudad</option>
+                            <option value="" disabled selected>Seleccione una provincia</option>
 
                             @foreach ($cities as $city)
                                 <option value="{{$city->id}}">{{$city->name}}</option>
@@ -83,11 +85,11 @@
 
                     {{-- Provincias --}}
                     <div>
-                        <x-jet-label value="Provincia" />
+                        <x-jet-label value="Ciudad" />
 
                         <select class="form-control w-full" wire:model="district_id">
 
-                            <option value="" disabled selected>Seleccione una provincia</option>
+                            <option value="" disabled selected>Seleccione una ciudad</option>
 
                             @foreach ($districts as $district)
                                 <option value="{{$district->id}}">{{$district->name}}</option>
@@ -99,13 +101,13 @@
 
                     <div>
                         <x-jet-label value="Dirección" />
-                        <x-jet-input class="w-full" wire:model="address" type="text" />
+                        <x-jet-input class="w-full" pattern="[A-Za-z0-9]{5,80}" wire:model="address" type="text" />
                         <x-jet-input-error for="address" />
                     </div>
 
                     <div class="col-span-2">
                         <x-jet-label value="Referencia" />
-                        <x-jet-input class="w-full" wire:model="references" type="text" />
+                        <x-jet-input class="w-full" pattern="[A-Za-z0-9]{5,40}" wire:model="references" type="text" />
                         <x-jet-input-error for="references" />
                     </div>
 
@@ -114,7 +116,7 @@
 
         </div>
 
-        <div>
+        <div class="flex justify-center lg:justify-start">
             <x-jet-button
                 wire:loading.attr="disabled"
                 wire:target="create_order"
@@ -122,10 +124,6 @@
                 wire:click="create_order">
                 Continuar con la compra
             </x-jet-button>
-
-            <hr>
-
-            <p class="text-sm text-principal mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam atque quo, labore facere placeat illo consequatur hic ut sapiente exercitationem, architecto iure, consequuntur impedit ex iusto ipsa voluptas laudantium iste <a href="" class="font-semibold text-orange-500">Políticas y privacidad</a></p>
         </div>
 
     </div>

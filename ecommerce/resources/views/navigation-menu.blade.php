@@ -30,7 +30,7 @@
                     </x-jet-nav-link>
 
                     <x-jet-nav-link href="{{route('admin.departments.index')}}" :active="request()->routeIs('admin.departments.index')">
-                        Departamentos
+                        Direcciones
                     </x-jet-nav-link>
 
                     <x-jet-nav-link href="{{route('admin.users.index')}}" :active="request()->routeIs('admin.users.index')">
@@ -126,7 +126,7 @@
             </x-jet-responsive-nav-link>
 
             <x-jet-responsive-nav-link href="{{route('admin.departments.index')}}" :active="request()->routeIs('admin.departments.index')">
-                Departamentos
+                Direcciones
             </x-jet-responsive-nav-link>
 
             <x-jet-responsive-nav-link href="{{route('admin.users.index')}}" :active="request()->routeIs('admin.users.index')">
