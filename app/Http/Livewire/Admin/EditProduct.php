@@ -67,7 +67,6 @@ class EditProduct extends Component
             $query->where('category_id', $value);
         })->get();
 
-        /* $this->reset(['subcategory_id', 'brand_id']); */
         $this->product->subcategory_id = "";
         $this->product->brand_id = "";
     }
