@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="/" class="flex items-center">
-                        <img src={{ asset('storage\Logo_2.png') }} alt="Logo"
+                        <img src={{ asset('img\Logo_2.png') }} alt="Logo"
                         class="h-[10vh] pr-16 pl-16 md:pr-10 md:pl-10 s:pr-5 s:pl-5 " alt="Logo">
                     </a>
                 </div>
