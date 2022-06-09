@@ -32,7 +32,7 @@
                 <p class="text-2xl font-semibold text-titulo2 my-4">
                     {{ $product->price }} €
                 </p>
-                <div class="text-gray-700 mb-4">
+                <div class="text-backgroundfooter mb-4">
                     <h2 class="font-bold text-lg">
                         Descripción
                     </h2>
@@ -52,7 +52,7 @@
                 </div>
                 @livewire('add-cart-item', ['product' => $product])
                 @can('review', $product)
-                    <div class="text-gray-400 mt-4">
+                    <div class="text-footerprincipal mt-4">
                         <h2>Dejar reseña</h2>
                         <form action="{{route('reviews.store', $product)}}" method="POST">
                             @csrf

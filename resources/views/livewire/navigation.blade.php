@@ -41,7 +41,7 @@
 
                                 <x-slot name="content" class="font-roboto_reg">
                                     <!-- Account Management -->
-                                    <div class="block px-4 py-2 text-xs text-gray-400">
+                                    <div class="block px-4 py-2 text-xs text-footerprincipal">
                                         {{ __('Manage Account') }}
                                     </div>
 
