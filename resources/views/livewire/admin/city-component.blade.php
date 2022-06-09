@@ -1,6 +1,6 @@
 <div>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight capitalize">
+        <h2 class="font-semibold text-xl text-titulo2 leading-tight capitalize">
             Ciudad: {{$city->name}}
         </h2>
     </x-slot>
@@ -10,11 +10,11 @@
         <x-jet-form-section submit="save" class="mb-6">
     
             <x-slot name="title">
-                Agregar una nueva distrito
+                Agregar una nueva ciudad
             </x-slot>
     
             <x-slot name="description">
-                Complete la información necesaria para poder agregar un nuevo distrito
+                Complete la información necesaria para poder agregar un nueva ciudad
             </x-slot>
     
             <x-slot name="form">
@@ -45,24 +45,24 @@
         {{-- Mostrar Departamentos --}}
         <x-jet-action-section>
             <x-slot name="title">
-                Lista de distritos
+                Lista de ciudades
             </x-slot>
     
             <x-slot name="description">
-                Aquí encontrará todas los distritos agregados
+                Aquí encontrará todas las ciudades agregadas
             </x-slot>
     
             <x-slot name="content">
     
-                <table class="text-gray-600">
-                    <thead class="border-b border-gray-300">
+                <table class="text-principal">
+                    <thead class="border-b border-fondo">
                         <tr class="text-left">
                             <th class="py-2 w-full">Nombre</th>
                             <th class="py-2">Acción</th>
                         </tr>
                     </thead>
     
-                    <tbody class="divide-y divide-gray-300">
+                    <tbody class="divide-y divide-fondo">
                         @foreach ($districts as $district)
                             <tr>
                                 <td class="py-2">
@@ -73,7 +73,7 @@
                                     </a> --}}
                                 </td>
                                 <td class="py-2">
-                                    <div class="flex divide-x divide-gray-300 font-semibold">
+                                    <div class="flex divide-x divide-fondo font-semibold">
                                         <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit({{$district}})">Editar</a>
                                         <a class="pl-2 hover:text-red-600 cursor-pointer" wire:click="$emit('deleteDistrict', {{$district->id}})">Eliminar</a>
                                     </div>

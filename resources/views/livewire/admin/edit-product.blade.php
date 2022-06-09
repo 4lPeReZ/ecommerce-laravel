@@ -3,7 +3,7 @@
     <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
-                <h1 class="font-semibold text-xl text-gray-800 leading-tight">
+                <h1 class="font-semibold text-xl text-titulo2 leading-tight">
                     Productos
                 </h1>
 
@@ -92,7 +92,7 @@
             {{-- Slug --}}
             <div class="mb-4">
                 <x-jet-label value="Slug" />
-                <x-jet-input type="text" disabled wire:model="slug" class="w-full bg-gray-200"
+                <x-jet-input type="text" disabled wire:model="slug" class="w-full bg-fondo"
                     placeholder="Ingrese el slug del producto" />
 
                 <x-jet-input-error for="slug" />

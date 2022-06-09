@@ -83,8 +83,8 @@
 
         <x-slot name="content">
 
-            <table class="text-gray-600">
-                <thead class="border-b border-gray-300">
+            <table class="text-principal">
+                <thead class="border-b border-fondo">
                     <tr class="text-left">
                         <th class="py-2 w-full">Nombre</th>
                         <th class="py-2 text-center">Acción</th>

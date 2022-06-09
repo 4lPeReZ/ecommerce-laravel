@@ -1,6 +1,6 @@
 <div>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl text-titulo2 leading-tight">
             Usuarios
         </h2>
     </x-slot>
@@ -13,23 +13,23 @@
             </div>
 
             @if (count($users))
-                <table class="min-w-full divide-y divide-gray-200">
+                <table class="min-w-full divide-y divide-fondo">
                     <thead class="bg-gray-50">
                         <tr>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-left text-xs font-medium text-principal uppercase tracking-wider">
                                 ID
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-left text-xs font-medium text-principal uppercase tracking-wider">
                                 Nombre
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-left text-xs font-medium text-principal uppercase tracking-wider">
                                 Email
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-left text-xs font-medium text-principal uppercase tracking-wider">
                                 Rol
                             </th>
                             <th scope="col" class="relative px-6 py-3">
@@ -37,29 +37,29 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
+                    <tbody class="bg-white divide-y divide-fondo">
 
                         @foreach ($users as $user)
                             <tr wire:key="{{$user->email}}">
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-gray-900">
+                                    <div class="text-titulo2">
                                         {{ $user->id }}
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
 
-                                    <div class="text-sm text-gray-900">
+                                    <div class="text-sm text-titulo2">
                                         {{ $user->name }}
                                     </div>
 
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">
+                                    <div class="text-sm text-titulo2">
                                         {{ $user->email }}
                                     </div>
 
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-principal">
                                     @if (count($user->roles))
                                         Admin
                                     @else
@@ -78,8 +78,6 @@
                                 </td>
                             </tr>
                         @endforeach
-                        <!-- More people... -->
-
                     </tbody>
                 </table>
             @else

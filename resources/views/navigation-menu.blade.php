@@ -45,12 +45,12 @@
                     <x-jet-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                                <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-fondo transition">
                                     <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
-                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-principal bg-white hover:text-gray-700 focus:outline-none transition">
                                         {{ Auth::user()->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -62,7 +62,7 @@
                         </x-slot>
 
                         <x-slot name="content">
-                            <!-- Account Management -->
+                            <!-- Administrar cuenta -->
                             <div class="block px-4 py-2 text-xs text-footerprincipal">
                                 {{ __('Manage Account') }}
                             </div>
@@ -79,7 +79,7 @@
 
                             <div class="border-t border-gray-100"></div>
 
-                            <!-- Authentication -->
+                            <!-- Autenticacion -->
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
@@ -94,9 +94,9 @@
                 </div>
             </div>
 
-            <!-- Hamburger -->
+            <!-- Menu Hamburgesa -->
             <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-footerprincipal hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-footerprincipal hover:text-principal hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-principal transition">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -106,7 +106,7 @@
         </div>
     </div>
 
-    <!-- Responsive Navigation Menu -->
+    <!-- Menu Responsive -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{route('admin.index')}}" :active="request()->routeIs('admin.index')">
@@ -134,8 +134,8 @@
             </x-jet-responsive-nav-link>
         </div>
 
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
+        <!-- Responsive -->
+        <div class="pt-4 pb-1 border-t border-fondo">
             <div class="flex items-center px-4">
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                     <div class="flex-shrink-0 mr-3">
@@ -144,13 +144,13 @@
                 @endif
 
                 <div>
-                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                    <div class="font-medium text-base text-titulo2">{{ Auth::user()->name }}</div>
+                    <div class="font-medium text-sm text-principal">{{ Auth::user()->email }}</div>
                 </div>
             </div>
 
             <div class="mt-3 space-y-1">
-                <!-- Account Management -->
+                <!-- Administrar cuenta -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Profile') }}
                 </x-jet-responsive-nav-link>
@@ -161,7 +161,7 @@
                     </x-jet-responsive-nav-link>
                 @endif
 
-                <!-- Authentication -->
+                <!-- Autenticacion -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 

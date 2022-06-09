@@ -27,7 +27,7 @@
                     </th>
                 </tr>
                 </thead>
-                <tbody class="bg-fondo divide-y divide-gray-200">
+                <tbody class="bg-fondo divide-y divide-fondo">
                     @foreach (Cart::content() as $item)
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap">

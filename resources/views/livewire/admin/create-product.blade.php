@@ -49,7 +49,7 @@
         <x-jet-input type="text"
             disabled
             wire:model="slug"
-            class="w-full bg-gray-200" 
+            class="w-full bg-fondo" 
             placeholder="Ingrese el slug del producto" />
 
     <x-jet-input-error for="slug" />

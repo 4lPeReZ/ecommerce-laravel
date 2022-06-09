@@ -39,15 +39,15 @@
 
         <x-slot name="content">
 
-            <table class="text-gray-600">
-                <thead class="border-b border-gray-300">
+            <table class="text-principal">
+                <thead class="border-b border-fondo">
                     <tr class="text-left">
                         <th class="py-2 w-full">Nombre</th>
                         <th class="py-2">Acción</th>
                     </tr>
                 </thead>
 
-                <tbody class="divide-y divide-gray-300">
+                <tbody class="divide-y divide-fondo">
                     @foreach ($brands as $brand)
                         <tr>
                             <td class="py-2">
@@ -57,7 +57,7 @@
                                 </a>
                             </td>
                             <td class="py-2">
-                                <div class="flex divide-x divide-gray-300 font-semibold">
+                                <div class="flex divide-x divide-fondo font-semibold">
                                     <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit('{{$brand->id}}')">Editar</a>
                                     <a class="pl-2 hover:text-red-600 cursor-pointer" wire:click="$emit('deleteBrand', '{{$brand->id}}')">Eliminar</a>
                                 </div>

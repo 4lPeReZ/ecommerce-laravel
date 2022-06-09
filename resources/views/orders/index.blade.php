@@ -13,7 +13,7 @@
                 </p>
             </a>
 
-            <a href="{{ route('orders.index') . "?status=2" }}" class="bg-gray-500 bg-opacity-75 rounded-lg px-12 pt-8 pb-4">
+            <a href="{{ route('orders.index') . "?status=2" }}" class="bg-principal bg-opacity-75 rounded-lg px-12 pt-8 pb-4">
                 <p class="text-center text-2xl">
                     {{$recibido}}
                 </p>
@@ -70,7 +70,7 @@
                                             <i class="fas fa-business-time text-red-500 opacity-50"></i>
                                             @break
                                         @case(2)
-                                            <i class="fas fa-credit-card text-gray-500 opacity-50"></i>
+                                            <i class="fas fa-credit-card text-principal opacity-50"></i>
                                             @break
                                         @case(3)
                                             <i class="fas fa-truck text-yellow-500 opacity-50"></i>

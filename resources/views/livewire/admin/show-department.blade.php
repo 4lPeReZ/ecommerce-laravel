@@ -1,6 +1,6 @@
 <div>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight capitalize">
+        <h2 class="font-semibold text-xl text-titulo2 leading-tight capitalize">
             Comunidad Autónoma: {{$department->name}}
         </h2>
     </x-slot>
@@ -10,11 +10,11 @@
         <x-jet-form-section submit="save" class="mb-6">
     
             <x-slot name="title">
-                Agregar una nueva ciudad
+                Agregar una nueva provincia
             </x-slot>
     
             <x-slot name="description">
-                Complete la información necesaria para poder agregar un nueva ciudad
+                Complete la información necesaria para poder agregar un nueva provincia
             </x-slot>
     
             <x-slot name="form">
@@ -30,7 +30,7 @@
 
                 <div class="col-span-6 sm:col-span-4">
                     <x-jet-label>
-                        Costo
+                        Coste
                     </x-jet-label>
     
                     <x-jet-input wire:model.defer="createForm.cost" type="number" class="w-full mt-1" />
@@ -42,7 +42,7 @@
             <x-slot name="actions">
     
                 <x-jet-action-message class="mr-3" on="saved">
-                    Ciudad agregada
+                    Provincia agregada
                 </x-jet-action-message>
     
                 <x-jet-button>
@@ -54,24 +54,24 @@
         {{-- Mostrar Departamentos --}}
         <x-jet-action-section>
             <x-slot name="title">
-                Lista de ciudades
+                Lista de provincias
             </x-slot>
     
             <x-slot name="description">
-                Aquí encontrará todas las ciudades agregadas
+                Aquí encontrará todas las provincias agregadas
             </x-slot>
     
             <x-slot name="content">
     
-                <table class="text-gray-600">
-                    <thead class="border-b border-gray-300">
+                <table class="text-principal">
+                    <thead class="border-b border-fondo">
                         <tr class="text-left">
                             <th class="py-2 w-full">Nombre</th>
                             <th class="py-2">Acción</th>
                         </tr>
                     </thead>
     
-                    <tbody class="divide-y divide-gray-300">
+                    <tbody class="divide-y divide-fondo">
                         @foreach ($cities as $city)
                             <tr>
                                 <td class="py-2">
@@ -81,7 +81,7 @@
                                     </a>
                                 </td>
                                 <td class="py-2">
-                                    <div class="flex divide-x divide-gray-300 font-semibold">
+                                    <div class="flex divide-x divide-fondo font-semibold">
                                         <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit({{$city}})">Editar</a>
                                         <a class="pl-2 hover:text-red-600 cursor-pointer" wire:click="$emit('deleteCity', {{$city->id}})">Eliminar</a>
                                     </div>
@@ -117,7 +117,7 @@
 
                     <div>
                         <x-jet-label>
-                            Costo
+                            Coste
                         </x-jet-label>
     
                         <x-jet-input wire:model="editForm.cost" type="text" class="w-full mt-1" />

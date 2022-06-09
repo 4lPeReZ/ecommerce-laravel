@@ -28,7 +28,7 @@
     </head>
     <body>
         @livewire('navigation')
-        <div class="font-sans text-gray-900 antialiased">
+        <div class="font-sans text-titulo2 antialiased">
             {{ $slot }}
         </div>
         @livewire('footer')

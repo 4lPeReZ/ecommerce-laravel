@@ -2,7 +2,7 @@
 
     <x-slot name="header">
         <div class="flex items-center">
-            <h2 class="font-semibold text-xl text-gray-600 leading-tight">
+            <h2 class="font-semibold text-xl text-principal leading-tight">
                 Lista de productos
             </h2>
 
@@ -12,8 +12,6 @@
         </div>
     </x-slot>
 
-
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="container py-12">
 
         <x-table-responsive>
@@ -29,31 +27,31 @@
 
             @if ($products->count())
                 
-                <table class="min-w-full divide-y divide-gray-200">
+                <table class="min-w-full divide-y divide-fondo">
                     <thead class="bg-gray-50">
                         <tr>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-left text-xs font-medium text-principal uppercase tracking-wider">
                                 Nombre
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-left text-xs font-medium text-principal uppercase tracking-wider">
                                 Categoría
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-left text-xs font-medium text-principal uppercase tracking-wider">
                                 Estado
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-left text-xs font-medium text-principal uppercase tracking-wider">
                                 Precio
                             </th>
                             <th scope="col" class="relative px-6 py-3">
-                                <span class="sr-only">Editar</span>
+                                <span class="sr-only">Edi</span>
                             </th>
                         </tr>
                     </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
+                    <tbody class="bg-white divide-y divide-fondo">
 
                         @foreach ($products as $product)
 
@@ -70,7 +68,7 @@
                                             @endif
                                         </div>
                                         <div class="ml-4">
-                                            <div class="text-sm font-medium text-gray-900">
+                                            <div class="text-sm font-medium text-titulo2">
                                                 {{ $product->name }}
                                             </div>
                                         </div>
@@ -78,7 +76,7 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
 
-                                    <div class="text-sm text-gray-900">
+                                    <div class="text-sm text-titulo2">
                                         {{ $product->subcategory->category->name }}
                                     </div>
 
@@ -102,16 +100,15 @@
                                     @endswitch
 
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-principal">
                                     {{$product->price}} €
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <a href="{{ route('admin.products.edit', $product) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                    <a href="{{ route('admin.products.edit', $product) }}" class="text-indigo-600 hover:text-indigo-900">Editar</a>
                                 </td>
                             </tr>
 
                         @endforeach
-                        <!-- More people... -->
                     </tbody>
                 </table>
 

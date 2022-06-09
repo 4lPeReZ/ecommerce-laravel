@@ -91,7 +91,7 @@
                     </tr>
                 </thead>
 
-                <tbody class="divide-y divide-gray-300">
+                <tbody class="divide-y divide-fondo">
                     @foreach ($items as $item)
                         <tr>
                             <td>

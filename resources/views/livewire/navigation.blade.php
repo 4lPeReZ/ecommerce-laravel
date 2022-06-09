@@ -32,7 +32,7 @@
                             <x-jet-dropdown align="right" width="48">
                                 <x-slot name="trigger">
                                     <button
-                                        class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                                        class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-fondo transition">
                                         <img class="h-8 w-8 rounded-full object-cover"
                                             src="{{ Auth::user()->profile_photo_url }}"
                                             alt="{{ Auth::user()->name }}" />
@@ -40,7 +40,7 @@
                                 </x-slot>
 
                                 <x-slot name="content" class="font-roboto_reg">
-                                    <!-- Account Management -->
+                                    <!-- Administrar cuenta -->
                                     <div class="block px-4 py-2 text-xs text-footerprincipal">
                                         {{ __('Manage Account') }}
                                     </div>
@@ -61,7 +61,7 @@
 
                                     <div class="border-t border-gray-100"></div>
 
-                                    <!-- Authentication -->
+                                    <!-- Autenticación -->
                                     <form method="POST" action="{{ route('logout') }}" x-data>
                                         @csrf
 
