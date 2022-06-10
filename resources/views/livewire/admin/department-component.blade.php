@@ -1,5 +1,5 @@
 <div class="container py-12">
-    {{-- Agregar Comunidad Autónoma --}}
+    {{-- Formulario para crear una nueva comunidad autonoma --}}
     <x-jet-form-section submit="save" class="mb-6">
 
         <x-slot name="title">
@@ -34,7 +34,7 @@
         </x-slot>
     </x-jet-form-section>
 
-    {{-- Mostrar Comunidad Autónoma --}}
+    {{-- Mostrar lista de comunidades autónomas --}}
     <x-jet-action-section>
         <x-slot name="title">
             Lista de comunidades autónomas
@@ -59,14 +59,17 @@
                         <tr>
                             <td class="py-2">
 
-                                <a href="{{route('admin.departments.show', $department)}}" class="uppercase underline hover:text-blue-600">
-                                    {{$department->name}}
+                                <a href="{{ route('admin.departments.show', $department) }}"
+                                    class="uppercase underline hover:text-blue-600">
+                                    {{ $department->name }}
                                 </a>
                             </td>
                             <td class="py-2">
                                 <div class="flex divide-x divide-fondo font-semibold">
-                                    <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit({{$department}})">Editar</a>
-                                    <a class="pl-2 hover:text-red-600 cursor-pointer" wire:click="$emit('deleteDepartment', {{$department->id}})">Eliminar</a>
+                                    <a class="pr-2 hover:text-blue-600 cursor-pointer"
+                                        wire:click="edit({{ $department }})">Editar</a>
+                                    <a class="pl-2 hover:text-red-600 cursor-pointer"
+                                        wire:click="$emit('deleteDepartment', {{ $department->id }})">Eliminar</a>
                                 </div>
                             </td>
                         </tr>
@@ -77,7 +80,7 @@
         </x-slot>
     </x-jet-action-section>
 
-    {{-- Modal editar --}}
+    {{-- Modal con formulario para editar --}}
     <x-jet-dialog-modal wire:model="editForm.open">
 
         <x-slot name="title">
@@ -87,7 +90,7 @@
         <x-slot name="content">
 
             <div class="space-y-3">
-               
+
                 <div>
                     <x-jet-label>
                         Nombre
@@ -98,7 +101,7 @@
                     <x-jet-input-error for="editForm.name" />
                 </div>
 
-             
+
             </div>
         </x-slot>
 
@@ -113,7 +116,7 @@
     @push('script')
         <script>
             Livewire.on('deleteDepartment', departmentId => {
-            
+                //Alert personalizado
                 Swal.fire({
                     title: '¿Estas seguro?',
                     text: "¡No podras revertir el proceso!",

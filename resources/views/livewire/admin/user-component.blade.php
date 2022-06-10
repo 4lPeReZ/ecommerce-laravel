@@ -1,4 +1,5 @@
 <div>
+    {{-- Vista del admin para los usuarios --}}
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-titulo2 leading-tight">
             Usuarios

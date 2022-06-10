@@ -1,3 +1,4 @@
+{{-- Vista para la eleccion del envio y finalmente acceder a la ventana de pago de un pedido --}}
 <div class="container font-roboto_reg min-h-[75vh] py-8 grid lg:grid-cols-2 xl:grid-cols-5 gap-6">
 
     <div class="order-2 lg:order-1 lg:col-span-1 xl:col-span-3">
@@ -5,21 +6,15 @@
         <div class="bg-fondo rounded-lg shadow p-6">
             <div class="mb-4">
                 <x-jet-label value="Nombre de contacto" />
-                <x-jet-input type="text"
-                            pattern="[A-Za-z0-9]{5,40}"
-                            wire:model.defer="contact"
-                            placeholder="Ingrese el nombre de la persona que recibirá el producto"
-                            class="w-full"/>
+                <x-jet-input type="text" pattern="[A-Za-z0-9]{5,40}" wire:model.defer="contact"
+                    placeholder="Ingrese el nombre de la persona que recibirá el producto" class="w-full" />
                 <x-jet-input-error for="contact" />
             </div>
 
             <div>
                 <x-jet-label value="Teléfono de contacto" />
-                <x-jet-input type="text"
-                            pattern="[0-9]{9}"
-                            wire:model.defer="phone"
-                            placeholder="Ingrese un número de telefono de contácto"
-                            class="w-full"/>
+                <x-jet-input type="text" pattern="[0-9]{9}" wire:model.defer="phone"
+                    placeholder="Ingrese un número de telefono de contácto" class="w-full" />
 
                 <x-jet-input-error for="phone" />
             </div>
@@ -59,14 +54,14 @@
                             <option value="" disabled selected>Seleccione una comunidad autonoma</option>
 
                             @foreach ($departments as $department)
-                                <option value="{{$department->id}}">{{$department->name}}</option>
+                                <option value="{{ $department->id }}">{{ $department->name }}</option>
                             @endforeach
                         </select>
 
                         <x-jet-input-error for="department_id" />
                     </div>
 
-                    {{-- Ciudades --}}
+                    {{-- Provincias --}}
                     <div>
                         <x-jet-label value="Provincia" />
 
@@ -75,7 +70,7 @@
                             <option value="" disabled selected>Seleccione una provincia</option>
 
                             @foreach ($cities as $city)
-                                <option value="{{$city->id}}">{{$city->name}}</option>
+                                <option value="{{ $city->id }}">{{ $city->name }}</option>
                             @endforeach
                         </select>
 
@@ -83,7 +78,7 @@
                     </div>
 
 
-                    {{-- Provincias --}}
+                    {{-- Ciudades --}}
                     <div>
                         <x-jet-label value="Ciudad" />
 
@@ -92,22 +87,26 @@
                             <option value="" disabled selected>Seleccione una ciudad</option>
 
                             @foreach ($districts as $district)
-                                <option value="{{$district->id}}">{{$district->name}}</option>
+                                <option value="{{ $district->id }}">{{ $district->name }}</option>
                             @endforeach
                         </select>
 
                         <x-jet-input-error for="district_id" />
                     </div>
 
+                    {{-- Direccion --}}
                     <div>
                         <x-jet-label value="Dirección" />
-                        <x-jet-input class="w-full" pattern="[A-Za-z0-9]{5,80}" wire:model="address" type="text" />
+                        <x-jet-input class="w-full" pattern="[A-Za-z0-9]{5,80}" wire:model="address"
+                            type="text" />
                         <x-jet-input-error for="address" />
                     </div>
 
+                    {{-- Datos adicionales --}}
                     <div class="col-span-2">
                         <x-jet-label value="Referencia" />
-                        <x-jet-input class="w-full" pattern="[A-Za-z0-9]{5,40}" wire:model="references" type="text" />
+                        <x-jet-input class="w-full" pattern="[A-Za-z0-9]{5,40}" wire:model="references"
+                            type="text" />
                         <x-jet-input-error for="references" />
                     </div>
 
@@ -117,10 +116,7 @@
         </div>
 
         <div class="flex justify-center lg:justify-start">
-            <x-jet-button
-                wire:loading.attr="disabled"
-                wire:target="create_order"
-                class="mt-6 mb-4" 
+            <x-jet-button wire:loading.attr="disabled" wire:target="create_order" class="mt-6 mb-4"
                 wire:click="create_order">
                 Continuar con la compra
             </x-jet-button>
@@ -128,21 +124,22 @@
 
     </div>
 
+    {{-- Recuperamos los datos de nuestros productos --}}
     <div class="order-1 lg:order-2 lg:col-span-1 xl:col-span-2">
         <div class="bg-fondo rounded-lg shadow p-6">
             <ul>
                 @forelse (Cart::content() as $item)
                     <li class="flex p-2 border-b-separador">
-                        <img class="h-15 w-20 object-cover mr-4" src="{{$item->options->image}}" alt="">
+                        <img class="h-15 w-20 object-cover mr-4" src="{{ $item->options->image }}" alt="">
                         <article class="flex-1">
                             <h1 class="font-bold">
-                                {{$item->name}}
+                                {{ $item->name }}
                             </h1>
                             <p>
-                                Cant: {{$item->qty}}
+                                Cant: {{ $item->qty }}
                             </p>
                             <p>
-                                {{$item->price}} €
+                                {{ $item->price }} €
                             </p>
                         </article>
                     </li>
@@ -160,7 +157,7 @@
             <div class="text-gray-700">
                 <p class="flex justify-between items-center">
                     Subtotal
-                    <span class="font-semibold">{{Cart::subtotal()}} €</span>
+                    <span class="font-semibold">{{ Cart::subtotal() }} €</span>
                 </p>
                 <p class="flex justify-between items-center">
                     Envío
@@ -168,7 +165,7 @@
                         @if ($shipping_type == 1 || $shipping_cost == 0)
                             Gratis
                         @else
-                            {{$shipping_cost}} €
+                            {{ $shipping_cost }} €
                         @endif
                     </span>
                 </p>
@@ -178,9 +175,9 @@
                 <p class="flex justify-between items-center font-semibold">
                     <span class="text-lg">Total</span>
                     @if ($shipping_type == 1)
-                        {{Cart::subtotal()}} €
+                        {{ Cart::subtotal() }} €
                     @else
-                        {{Cart::subtotal() + $shipping_cost}} €
+                        {{ Cart::subtotal() + $shipping_cost }} €
                     @endif
                 </p>
             </div>

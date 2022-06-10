@@ -1,3 +1,4 @@
+{{-- componente que nos devuelve la pantalla de inicio de nuestra aplicacion --}}
 <x-app-layout>
     <h1 class="font-abril text-center mt-8 text-3xl xl:text-6xl ">NOVEDADES</h1>
     <div class="container py-8 font-roboto_reg content-center">
@@ -7,6 +8,7 @@
                     <h1 class="text-lg uppercase font-semibold text-titulo">
                         {{ $category->name }}
                     </h1>
+                    {{-- En esta ruta es donde nosotros mostraremos los sliders con glider js --}}
                     <a href="{{route('categories.show', $category)}}" class="text-titulo2 text-xs hover:text-backgroundfooter hover:underline ml-2">Ver más</a>
                 </div>
                 @livewire('category-products', ['category' => $category])

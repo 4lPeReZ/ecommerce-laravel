@@ -1,3 +1,4 @@
+{{-- componente que nos devuelve el navbar del panel de administrados para acceder a cada uno de los apartados que queramos administrar --}}
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- NavBar -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -7,33 +8,33 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="/" class="flex items-center">
                         <img src={{ asset('img\Logo_2.png') }} alt="Logo"
-                        class="h-[10vh] pr-16 pl-16 md:pr-10 md:pl-10 s:pr-5 s:pl-5 " alt="Logo">
+                            class="h-[10vh] pr-16 pl-16 md:pr-10 md:pl-10 s:pr-5 s:pl-5 " alt="Logo">
                     </a>
                 </div>
 
                 <!-- Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{route('admin.index')}}" :active="request()->routeIs('admin.index')">
+                    <x-jet-nav-link href="{{ route('admin.index') }}" :active="request()->routeIs('admin.index')">
                         Productos
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{route('admin.categories.index')}}" :active="request()->routeIs('admin.categories.*')">
+                    <x-jet-nav-link href="{{ route('admin.categories.index') }}" :active="request()->routeIs('admin.categories.*')">
                         Categorias
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{route('admin.orders.index')}}" :active="request()->routeIs('admin.orders.*')">
+                    <x-jet-nav-link href="{{ route('admin.orders.index') }}" :active="request()->routeIs('admin.orders.*')">
                         Pedidos
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{route('admin.brands.index')}}" :active="request()->routeIs('admin.brands.*')">
+                    <x-jet-nav-link href="{{ route('admin.brands.index') }}" :active="request()->routeIs('admin.brands.*')">
                         Marcas
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{route('admin.departments.index')}}" :active="request()->routeIs('admin.departments.index')">
+                    <x-jet-nav-link href="{{ route('admin.departments.index') }}" :active="request()->routeIs('admin.departments.index')">
                         Direcciones
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{route('admin.users.index')}}" :active="request()->routeIs('admin.users.index')">
+                    <x-jet-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.index')">
                         Usuarios
                     </x-jet-nav-link>
                 </div>
@@ -45,16 +46,23 @@
                     <x-jet-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-fondo transition">
-                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                <button
+                                    class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-fondo transition">
+                                    <img class="h-8 w-8 rounded-full object-cover"
+                                        src="{{ Auth::user()->profile_photo_url }}"
+                                        alt="{{ Auth::user()->name }}" />
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
-                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-principal bg-white hover:text-gray-700 focus:outline-none transition">
+                                    <button type="button"
+                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-principal bg-white hover:text-gray-700 focus:outline-none transition">
                                         {{ Auth::user()->name }}
 
-                                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
                                         </svg>
                                     </button>
                                 </span>
@@ -83,8 +91,7 @@
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
-                                <x-jet-dropdown-link href="{{ route('logout') }}"
-                                         onclick="event.preventDefault();
+                                <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                     {{ __('Log Out') }}
                                 </x-jet-dropdown-link>
@@ -96,10 +103,14 @@
 
             <!-- Menu Hamburgesa -->
             <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-footerprincipal hover:text-principal hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-principal transition">
+                <button @click="open = ! open"
+                    class="inline-flex items-center justify-center p-2 rounded-md text-footerprincipal hover:text-principal hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-principal transition">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -107,29 +118,29 @@
     </div>
 
     <!-- Menu Responsive -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+    <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{route('admin.index')}}" :active="request()->routeIs('admin.index')">
+            <x-jet-responsive-nav-link href="{{ route('admin.index') }}" :active="request()->routeIs('admin.index')">
                 Productos
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{route('admin.orders.index')}}" :active="request()->routeIs('admin.orders.*')">
+            <x-jet-responsive-nav-link href="{{ route('admin.orders.index') }}" :active="request()->routeIs('admin.orders.*')">
                 Pedidos
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{route('admin.categories.index')}}" :active="request()->routeIs('admin.categories.*')">
+            <x-jet-responsive-nav-link href="{{ route('admin.categories.index') }}" :active="request()->routeIs('admin.categories.*')">
                 Categorías
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{route('admin.brands.index')}}" :active="request()->routeIs('admin.brands.*')">
+            <x-jet-responsive-nav-link href="{{ route('admin.brands.index') }}" :active="request()->routeIs('admin.brands.*')">
                 Marcas
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{route('admin.departments.index')}}" :active="request()->routeIs('admin.departments.index')">
+            <x-jet-responsive-nav-link href="{{ route('admin.departments.index') }}" :active="request()->routeIs('admin.departments.index')">
                 Direcciones
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{route('admin.users.index')}}" :active="request()->routeIs('admin.users.index')">
+            <x-jet-responsive-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.index')">
                 Usuarios
             </x-jet-responsive-nav-link>
         </div>
@@ -139,7 +150,8 @@
             <div class="flex items-center px-4">
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                     <div class="flex-shrink-0 mr-3">
-                        <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                        <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}"
+                            alt="{{ Auth::user()->name }}" />
                     </div>
                 @endif
 
@@ -165,14 +177,12 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <x-jet-responsive-nav-link href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
+                    <x-jet-responsive-nav-link href="{{ route('logout') }}" onclick="event.preventDefault();
                                     this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-jet-responsive-nav-link>
                 </form>
 
-                
             </div>
         </div>
     </div>

@@ -48,7 +48,7 @@
         <div class="bg-gray-100">
             @livewire('navigation')
 
-            <!-- Page Content -->
+            <!-- Contenido principal -->
             <main class="min-h-[75vh] mx-2">
                 {{ $slot }}
             </main>

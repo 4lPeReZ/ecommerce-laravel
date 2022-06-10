@@ -1,3 +1,4 @@
+{{-- Dropdown que nos muestra las subcategorias de la categoria Merchandise --}}
 <div class="ml-3 relative">
     <x-jet-dropdown width="48">
         <x-slot name="trigger">
@@ -22,7 +23,8 @@
 </div>
 
 <style>
-    span p:hover, a:hover{
+    span p:hover,
+    a:hover {
         text-decoration-line: underline
     }
 </style>

@@ -1,5 +1,5 @@
 <div>
-
+    {{-- Campos para editar o eliminar un producto ya creado --}}
     <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
@@ -30,7 +30,6 @@
 
                 <ul class="flex flex-wrap">
                     @foreach ($product->images as $image)
-
                         <li class="relative" wire:key="image-{{ $image->id }}">
                             <img class="w-32 h-20 object-cover" src="{{ Storage::url($image->url) }}" alt="">
                             <x-jet-danger-button class="absolute right-2 top-2"
@@ -39,7 +38,6 @@
                                 x
                             </x-jet-danger-button>
                         </li>
-
                     @endforeach
 
                 </ul>
@@ -103,14 +101,15 @@
                 <div wire:ignore>
                     <x-jet-label value="Descripción" />
                     <textarea class="w-full form-control" rows="4" wire:model="product.description" x-data x-init="ClassicEditor.create($refs.miEditor)
-                        .then(function(editor){
+                        .then(function(editor) {
                             editor.model.document.on('change:data', () => {
                                 @this.set('product.description', editor.getData())
                             })
                         })
-                        .catch( error => {
-                            console.error( error );
-                        } );" x-ref="miEditor">
+                        .catch(error => {
+                            console.error(error);
+                        });"
+                        x-ref="miEditor">
                     </textarea>
                 </div>
                 <x-jet-input-error for="product.description" />
@@ -140,18 +139,11 @@
 
 
             @if ($this->subcategory)
-
-
-
-
-                    <div>
-                        <x-jet-label value="Cantidad" />
-                        <x-jet-input wire:model="product.quantity" type="number" class="w-full" />
-                        <x-jet-input-error for="product.quantity" />
-                    </div>
-
-
-
+                <div>
+                    <x-jet-label value="Cantidad" />
+                    <x-jet-input wire:model="product.quantity" type="number" class="w-full" />
+                    <x-jet-input-error for="product.quantity" />
+                </div>
             @endif
 
             <div class="flex justify-end items-center mt-4">
@@ -173,6 +165,7 @@
 
     @push('script')
         <script>
+            //Script para poder subir nuestras imagenes mediante la libreria Dropzone
             Dropzone.options.myAwesomeDropzone = {
                 headers: {
                     'X-CSRF-TOKEN': "{{ csrf_token() }}"
@@ -189,6 +182,7 @@
                 }
             };
             Livewire.on('deleteProduct', () => {
+                //Alert personalizado
                 Swal.fire({
                     title: '¿Estas seguro?',
                     text: "¡No podras revertir el proceso!",

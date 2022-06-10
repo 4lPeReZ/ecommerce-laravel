@@ -1,12 +1,15 @@
 <div class="bg-white shadow-xl rounded-lg p-6 mb-4">
+    {{-- apartado en el que podemos definir el estado de un producto --}}
     <p class="text-2xl text-center font-semibold mb-2">Estado del producto</p>
 
     <div class="flex">
         <label class="mr-6">
+            {{-- Este estado creara el producto pero no lo publicara --}}
             <input wire:model.defer="status" type="radio" name="status" value="1">
             Marcar producto como borrador
         </label>
         <label>
+            {{-- Este estado creara el producto y lo publicara --}}
             <input wire:model.defer="status" type="radio" name="status" value="2">
             Marcar producto como publicado
         </label>

@@ -1,5 +1,5 @@
 <div class="container py-12">
-    {{-- Formaliio crear --}}
+    {{-- Formulario para crear una nueva marca --}}
     <x-jet-form-section submit="save" class="mb-6">
         <x-slot name="title">
             Agregar nueva marca
@@ -53,13 +53,15 @@
                             <td class="py-2">
 
                                 <a class="uppercase">
-                                    {{$brand->name}}
+                                    {{ $brand->name }}
                                 </a>
                             </td>
                             <td class="py-2">
                                 <div class="flex divide-x divide-fondo font-semibold">
-                                    <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit('{{$brand->id}}')">Editar</a>
-                                    <a class="pl-2 hover:text-red-600 cursor-pointer" wire:click="$emit('deleteBrand', '{{$brand->id}}')">Eliminar</a>
+                                    <a class="pr-2 hover:text-blue-600 cursor-pointer"
+                                        wire:click="edit('{{ $brand->id }}')">Editar</a>
+                                    <a class="pl-2 hover:text-red-600 cursor-pointer"
+                                        wire:click="$emit('deleteBrand', '{{ $brand->id }}')">Eliminar</a>
                                 </div>
                             </td>
                         </tr>
@@ -70,7 +72,7 @@
         </x-slot>
     </x-jet-action-section>
 
-    {{-- Modal editar --}}
+    {{-- Modal con formulario para editar --}}
     <x-jet-dialog-modal wire:model="editForm.open">
         <x-slot name="title">
             Editar marca
@@ -94,7 +96,7 @@
     @push('script')
         <script>
             Livewire.on('deleteBrand', brandId => {
-            
+                //Alert personalizado
                 Swal.fire({
                     title: '¿Estas seguro?',
                     text: "¡No podras revertir el proceso!",

@@ -1,6 +1,5 @@
 <div class="container py-12">
-    
-    {{-- Formulario crear categoría --}}
+    {{-- Formulario para crear una nueva categoria --}}
     <x-jet-form-section submit="save" class="mb-6">
         <x-slot name="title">
             Crear nueva subcategoría
@@ -70,14 +69,16 @@
                         <tr>
                             <td class="py-2">
 
-                                <a href="{{route('admin.categories.show', $subcategory)}}" class="uppercase">
-                                    {{$subcategory->name}}
+                                <a href="{{ route('admin.categories.show', $subcategory) }}" class="uppercase">
+                                    {{ $subcategory->name }}
                                 </a>
                             </td>
                             <td class="py-2">
                                 <div class="flex divide-x divide-fondo font-semibold">
-                                    <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit('{{$subcategory->id}}')">Editar</a>
-                                    <a class="pl-2 hover:text-red-600 cursor-pointer" wire:click="$emit('deleteSubcategory', '{{$subcategory->id}}')">Eliminar</a>
+                                    <a class="pr-2 hover:text-blue-600 cursor-pointer"
+                                        wire:click="edit('{{ $subcategory->id }}')">Editar</a>
+                                    <a class="pl-2 hover:text-red-600 cursor-pointer"
+                                        wire:click="$emit('deleteSubcategory', '{{ $subcategory->id }}')">Eliminar</a>
                                 </div>
                             </td>
                         </tr>
@@ -88,7 +89,7 @@
         </x-slot>
     </x-jet-action-section>
 
-    {{-- Modal editar --}}
+    {{-- Modal con formulario para editar --}}
     <x-jet-dialog-modal wire:model="editForm.open">
 
         <x-slot name="title">
@@ -98,7 +99,7 @@
         <x-slot name="content">
 
             <div class="space-y-3">
-                
+
                 <div>
                     <x-jet-label>
                         Nombre
@@ -132,7 +133,7 @@
     @push('script')
         <script>
             Livewire.on('deleteSubcategory', subcategoryId => {
-            
+                //Alert personalizado
                 Swal.fire({
                     title: '¿Estas seguro?',
                     text: "¡No podras revertir el proceso!",

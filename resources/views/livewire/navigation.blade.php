@@ -1,3 +1,4 @@
+{{-- Nuestra navbar con diseño responsive --}}
 <header class="bg-fondo sticky top-0" style="z-index: 900" x-data="dropdown()">
     <div class="container flex flex-wrap font-roboto_reg justify-between items-center content-cente md:justify-start">
         <ul class="container flex flex-wrap justify-between items-center content-center mx mt-1 mb-1 md:flex-row "
@@ -6,14 +7,14 @@
                 <!-- Logo -->
                 <a href="/" class="flex items-center">
                     <img src={{ asset('img\Logo_2.png') }} alt="Logo"
-                    class="h-[10vh] pr-16 pl-16 md:pr-10 md:pl-10 s:pr-5 s:pl-5 " alt="Logo">
+                        class="h-[10vh] pr-16 pl-16 md:pr-10 md:pl-10 s:pr-5 s:pl-5 " alt="Logo">
                 </a>
             </li>
 
             @foreach ($categories as $category)
                 <li class="flex items-center text-principal">
                     <div class="flex-1 hidden xl:block">
-                        <a href="{{route('categories.show', $category)}}" class="py-2 px-4 text-sm flex items-center ">
+                        <a href="{{ route('categories.show', $category) }}" class="py-2 px-4 text-sm flex items-center ">
                             {{ $category->name }}
                         </a>
                     </div>
@@ -65,9 +66,8 @@
                                     <form method="POST" action="{{ route('logout') }}" x-data>
                                         @csrf
 
-                                        <x-jet-dropdown-link href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                        this.closest('form').submit();">
+                                        <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            this.closest('form').submit();">
                                             {{ __('Log Out') }}
                                         </x-jet-dropdown-link>
                                     </form>
@@ -121,13 +121,14 @@
             <ul>
                 @foreach ($categories as $category)
                     <li class="text-principal hover:bg-backgroundfooter hover:text-fondo">
-                        <a href="{{route('categories.show', $category)}}" class="py-2 px-4 text-sm flex items-center">
+                        <a href="{{ route('categories.show', $category) }}"
+                            class="py-2 px-4 text-sm flex items-center">
                             {{ $category->name }}
                         </a>
                     </li>
                 @endforeach
             </ul>
-            <div class="bg-separador h-px" ></div>
+            <div class="bg-separador h-px"></div>
             @auth
                 <div class="text-principal hover:bg-backgroundfooter hover:text-fondo">
                     <a href="{{ route('profile.show') }}" class="py-2 px-4 text-sm flex items-center">
@@ -157,18 +158,17 @@
                         </form>
                     </a>
                 </div>
-
             @else
-            <div class="text-principal hover:bg-backgroundfooter hover:text-fondo">
-                <a href="{{ route('login') }}" class="py-2 px-4 text-sm flex items-center">
-                    Iniciar sesión
-                </a>
-            </div>
-            <div class="text-principal hover:bg-backgroundfooter hover:text-fondo">
-                <a href="{{ route('register') }}" class="py-2 px-4 text-sm flex items-center">
-                    Registrate
-                </a>
-            </div>
+                <div class="text-principal hover:bg-backgroundfooter hover:text-fondo">
+                    <a href="{{ route('login') }}" class="py-2 px-4 text-sm flex items-center">
+                        Iniciar sesión
+                    </a>
+                </div>
+                <div class="text-principal hover:bg-backgroundfooter hover:text-fondo">
+                    <a href="{{ route('register') }}" class="py-2 px-4 text-sm flex items-center">
+                        Registrate
+                    </a>
+                </div>
             @endauth
         </div>
     </nav>

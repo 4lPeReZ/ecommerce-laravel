@@ -69,7 +69,7 @@
                 </header>
             @endif
 
-                <!-- Page Content -->
+                <!-- Contenido principal -->
                 <main class="min-h-[75vh] ">
                     {{ $slot }}
                 </main>

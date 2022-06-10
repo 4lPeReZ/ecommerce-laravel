@@ -1,59 +1,59 @@
 <div>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-titulo2 leading-tight capitalize">
-            Ciudad: {{$city->name}}
+            Ciudad: {{ $city->name }}
         </h2>
     </x-slot>
 
     <div class="container py-12">
-        {{-- Agregar distrito --}}
+        {{-- Formulario para agregar una nueva ciudad --}}
         <x-jet-form-section submit="save" class="mb-6">
-    
+
             <x-slot name="title">
                 Agregar una nueva ciudad
             </x-slot>
-    
+
             <x-slot name="description">
                 Complete la información necesaria para poder agregar un nueva ciudad
             </x-slot>
-    
+
             <x-slot name="form">
                 <div class="col-span-6 sm:col-span-4">
                     <x-jet-label>
                         Nombre
                     </x-jet-label>
-    
+
                     <x-jet-input wire:model.defer="createForm.name" type="text" class="w-full mt-1" />
-    
+
                     <x-jet-input-error for="createForm.name" />
                 </div>
 
             </x-slot>
-    
+
             <x-slot name="actions">
-    
+
                 <x-jet-action-message class="mr-3" on="saved">
                     Distrito agregado
                 </x-jet-action-message>
-    
+
                 <x-jet-button>
                     Agregar
                 </x-jet-button>
             </x-slot>
         </x-jet-form-section>
-    
-        {{-- Mostrar Departamentos --}}
+
+        {{-- Mostrar Ciudades --}}
         <x-jet-action-section>
             <x-slot name="title">
                 Lista de ciudades
             </x-slot>
-    
+
             <x-slot name="description">
                 Aquí encontrará todas las ciudades agregadas
             </x-slot>
-    
+
             <x-slot name="content">
-    
+
                 <table class="text-principal">
                     <thead class="border-b border-fondo">
                         <tr class="text-left">
@@ -61,69 +61,69 @@
                             <th class="py-2">Acción</th>
                         </tr>
                     </thead>
-    
+
                     <tbody class="divide-y divide-fondo">
                         @foreach ($districts as $district)
                             <tr>
                                 <td class="py-2">
-    
-                                    {{$district->name}}
-                                    {{-- <a href="{{route('admin.districts.show', $district)}}" class="uppercase underline hover:text-blue-600">
-                                        {{$district->name}}
-                                    </a> --}}
+
+                                    {{ $district->name }}
+
                                 </td>
                                 <td class="py-2">
                                     <div class="flex divide-x divide-fondo font-semibold">
-                                        <a class="pr-2 hover:text-blue-600 cursor-pointer" wire:click="edit({{$district}})">Editar</a>
-                                        <a class="pl-2 hover:text-red-600 cursor-pointer" wire:click="$emit('deleteDistrict', {{$district->id}})">Eliminar</a>
+                                        <a class="pr-2 hover:text-blue-600 cursor-pointer"
+                                            wire:click="edit({{ $district }})">Editar</a>
+                                        <a class="pl-2 hover:text-red-600 cursor-pointer"
+                                            wire:click="$emit('deleteDistrict', {{ $district->id }})">Eliminar</a>
                                     </div>
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
-    
+
             </x-slot>
         </x-jet-action-section>
-    
-        {{-- Modal editar --}}
+
+        {{-- Modal con formulario para editar --}}
         <x-jet-dialog-modal wire:model="editForm.open">
-    
+
             <x-slot name="title">
                 Editar distrito
             </x-slot>
-    
+
             <x-slot name="content">
-    
+
                 <div class="space-y-3">
-                   
+
                     <div>
                         <x-jet-label>
                             Nombre
                         </x-jet-label>
-    
+
                         <x-jet-input wire:model="editForm.name" type="text" class="w-full mt-1" />
-    
+
                         <x-jet-input-error for="editForm.name" />
                     </div>
-    
-                 
+
+
                 </div>
             </x-slot>
-    
+
             <x-slot name="footer">
                 <x-jet-danger-button wire:click="update" wire:loading.attr="disabled" wire:target="update">
                     Actualizar
                 </x-jet-danger-button>
             </x-slot>
-    
+
         </x-jet-dialog-modal>
     </div>
 
     @push('script')
         <script>
             Livewire.on('deleteDistrict', districtId => {
-            
+                //Alert personalizado
                 Swal.fire({
                     title: '¿Estas seguro?',
                     text: "¡No podras revertir el proceso!",

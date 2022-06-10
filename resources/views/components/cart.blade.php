@@ -1,4 +1,4 @@
-@props(['size' => 6, 'color' => 'principal'])
+@props(['size' => 6, 'color' => 'principal']) {{-- componente boton creado a partir del que nos proporciona livewire --}}
 
 @php
     switch ($color) {

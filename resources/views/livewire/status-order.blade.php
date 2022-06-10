@@ -1,10 +1,10 @@
+{{-- Componente que nos devuelve la vista de los pedidos de un usuario con los diferentes estados que podria tener --}}
 <div class="max-w-5xl min-h-[75vh] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-
     <div class="bg-white rounded-lg shadow-lg px-12 py-8 mb-6 flex items-center">
 
         <div class="relative">
-            <div class="{{ ($order->status >= 2 && $order->status != 5) ? 'bg-blue-400' : 'bg-footerprincipal' }}  rounded-full h-12 w-12 flex items-center justify-center">
+            <div
+                class="{{ $order->status >= 2 && $order->status != 5 ? 'bg-blue-400' : 'bg-footerprincipal' }}  rounded-full h-12 w-12 flex items-center justify-center">
                 <i class="fas fa-check text-white"></i>
             </div>
 
@@ -13,10 +13,13 @@
             </div>
         </div>
 
-        <div class="{{ ($order->status >= 3 && $order->status != 5) ? 'bg-blue-400' : 'bg-footerprincipal' }} h-1 flex-1 mx-2"></div>
+        <div
+            class="{{ $order->status >= 3 && $order->status != 5 ? 'bg-blue-400' : 'bg-footerprincipal' }} h-1 flex-1 mx-2">
+        </div>
 
         <div class="relative">
-            <div class="{{ ($order->status >= 3 && $order->status != 5) ? 'bg-blue-400' : 'bg-footerprincipal' }} rounded-full h-12 w-12 flex items-center justify-center">
+            <div
+                class="{{ $order->status >= 3 && $order->status != 5 ? 'bg-blue-400' : 'bg-footerprincipal' }} rounded-full h-12 w-12 flex items-center justify-center">
                 <i class="fas fa-truck text-white"></i>
             </div>
 
@@ -25,10 +28,13 @@
             </div>
         </div>
 
-        <div class="{{ ($order->status >= 4 && $order->status != 5) ? 'bg-blue-400' : 'bg-footerprincipal' }} h-1 flex-1 mx-2"></div>
+        <div
+            class="{{ $order->status >= 4 && $order->status != 5 ? 'bg-blue-400' : 'bg-footerprincipal' }} h-1 flex-1 mx-2">
+        </div>
 
         <div class="relative">
-            <div class="{{ ($order->status >= 4 && $order->status != 5) ? 'bg-blue-400' : 'bg-footerprincipal' }} rounded-full h-12 w-12 flex items-center justify-center">
+            <div
+                class="{{ $order->status >= 4 && $order->status != 5 ? 'bg-blue-400' : 'bg-footerprincipal' }} rounded-full h-12 w-12 flex items-center justify-center">
                 <i class="fas fa-check text-white"></i>
             </div>
 
@@ -36,11 +42,7 @@
                 <p>Entregado</p>
             </div>
         </div>
-
     </div>
-
-
-
 
     <div class="bg-white rounded-lg shadow-lg px-6 py-4 mb-6">
         <p class="text-gray-700 uppercase"><span class="font-semibold">Número de pedido:</span>
@@ -91,13 +93,10 @@
                     <p>{{ $shipping->department }} - {{ $shipping->city }} - {{ $shipping->district }}
                     </p>
                 @endif
-
-
             </div>
 
             <div>
                 <p class="text-lg font-semibold uppercase">Contacto</p>
-
                 <p class="text-sm">Persona que recibirá el producto: {{ $order->contact }}</p>
                 <p class="text-sm">Teléfono de contacto: {{ $order->phone }}</p>
             </div>
@@ -122,8 +121,7 @@
                     <tr>
                         <td>
                             <div class="flex">
-                                <img class="h-15 w-20 object-cover mr-4" src="{{ $item->options->image }}"
-                                    alt="">
+                                <img class="h-15 w-20 object-cover mr-4" src="{{ $item->options->image }}" alt="">
                                 <article>
                                     <h1 class="font-bold">{{ $item->name }}</h1>
                                     <div class="flex text-xs">

@@ -12,6 +12,7 @@ use App\Http\Livewire\CreateOrder;
 use App\Http\Livewire\Error404;
 use App\Http\Livewire\PaymentOrder;
 
+//Rutas de la parte del usuario
 Route::get('/', WelcomeController::class);
 
 Route::get('search', SearchController::class)->name('search');
@@ -24,7 +25,7 @@ Route::get('shopping-cart', ShoppingCart::class)->name('shopping-cart');
 
 Route::get('error404', Error404::class)->name('error404');
 
-
+//Rutas de la parte del usuario logeado
 Route::middleware(['auth'])->group(function(){
 
     Route::get('orders', [OrderController::class, 'index'])->name('orders.index');

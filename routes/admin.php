@@ -19,6 +19,7 @@ use App\Http\Livewire\Admin\ShowDepartment;
 use App\Http\Livewire\Admin\CityComponent;
 use App\Http\Livewire\Admin\UserComponent;
 
+//Rutas de la parte de administracion
 Route::get('/', ShowProducts::class)->name('admin.index');
 
 Route::get('products/create', CreateProduct::class)->name('admin.products.create');
