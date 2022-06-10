@@ -1,3 +1,4 @@
+<!-- Vista en la que se muestra el tipo de envio y se procede a realizar el pago -->
 <div>
     
     <div class="grid min-h-[75vh] grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 gap-6 container py-8">

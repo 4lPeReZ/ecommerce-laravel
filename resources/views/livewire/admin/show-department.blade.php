@@ -143,20 +143,20 @@
             Livewire.on('deleteCity', cityId => {
             
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    title: '¿Estas seguro?',
+                    text: "¡No podras revertir el proceso!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: '¡Si, deseo borrar la provincia!'
                 }).then((result) => {
                     if (result.isConfirmed) {
                         Livewire.emitTo('admin.show-department', 'delete', cityId)
                         Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
+                            '¡Borrado!',
+                            '¡Tu provincia ha sido eliminado!',
+                            'Completado'
                         )
                     }
                 })
